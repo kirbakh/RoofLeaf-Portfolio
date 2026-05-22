@@ -1,6 +1,7 @@
 {
   "lang": "uk",
   "brand": "Root & Leaf",
+  "brandShort": "R&L",
   "tagline": "Зелений дім без зусиль",
   "theme": {
     "toLight": "Світла тема",
@@ -11,7 +12,8 @@
     "catalog": "Каталог",
     "journal": "Журнал",
     "about": "Про нас",
-    "contact": "Контакти"
+    "contact": "Контакти",
+    "theme": "Тема"
   },
   "meta": {
     "home": "Root & Leaf — кімнатні рослини",

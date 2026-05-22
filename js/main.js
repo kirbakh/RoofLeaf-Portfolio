@@ -9,12 +9,64 @@ import { initTheme } from './theme.js';
 
 const COOKIE_KEY = 'rl-cookies-accepted';
 
+/** Backdrop + panel — кліки по псевдо-елементу на iOS не працюють */
+function ensureMobileNavStructure(nav) {
+  if (!nav || nav.dataset.navReady) return;
+
+  const links = [...nav.querySelectorAll(':scope > a')];
+  if (!links.length) return;
+
+  const backdrop = document.createElement('button');
+  backdrop.type = 'button';
+  backdrop.className = 'nav-mobile__backdrop';
+  backdrop.setAttribute('aria-label', 'Закрити меню');
+  backdrop.tabIndex = -1;
+
+  const panel = document.createElement('div');
+  panel.className = 'nav-mobile__panel';
+  links.forEach((link) => panel.appendChild(link));
+
+  nav.append(backdrop, panel);
+  nav.dataset.navReady = '1';
+  addMobileNavTools(panel);
+}
+
+/** Тема в меню, коли кнопка прихована в header (≤520px) */
+function addMobileNavTools(panel) {
+  if (!panel || panel.querySelector('.nav-mobile__tools')) return;
+
+  const themeSrc = document.querySelector('[data-theme-toggle]');
+  if (!themeSrc) return;
+
+  const tools = document.createElement('div');
+  tools.className = 'nav-mobile__tools';
+
+  const themeBtn = document.createElement('button');
+  themeBtn.type = 'button';
+  themeBtn.className = 'nav-mobile__tool nav-mobile__tool--theme';
+  themeBtn.setAttribute('data-i18n', 'nav.theme');
+  themeBtn.innerHTML = '<span aria-hidden="true">◐</span><span>Тема</span>';
+
+  themeBtn.addEventListener('click', () => {
+    themeSrc.click();
+    closeNavRef?.();
+  });
+
+  tools.appendChild(themeBtn);
+  panel.appendChild(tools);
+}
+
+let closeNavRef;
+
 function initHeader() {
   const header = document.querySelector('.site-header');
   const toggle = document.querySelector('.menu-toggle');
   const mobileNav = document.querySelector('.nav-mobile');
 
   const main = document.getElementById('main');
+
+  ensureMobileNavStructure(mobileNav);
+  const backdrop = mobileNav?.querySelector('.nav-mobile__backdrop');
 
   const closeNav = () => {
     mobileNav?.classList.remove('is-open');
@@ -23,25 +75,38 @@ function initHeader() {
     toggle?.classList.remove('is-open');
     toggle?.setAttribute('aria-expanded', 'false');
     main?.removeAttribute('aria-hidden');
+    backdrop?.setAttribute('tabindex', '-1');
+  };
+
+  closeNavRef = closeNav;
+
+  const setNavOpen = (open) => {
+    mobileNav?.classList.toggle('is-open', open);
+    document.body.classList.toggle('nav-open', open);
+    header?.classList.toggle('nav-is-open', open);
+    toggle?.classList.toggle('is-open', open);
+    toggle?.setAttribute('aria-expanded', String(open));
+    if (open) {
+      main?.setAttribute('aria-hidden', 'true');
+      backdrop?.setAttribute('tabindex', '0');
+    } else {
+      main?.removeAttribute('aria-hidden');
+      backdrop?.setAttribute('tabindex', '-1');
+    }
   };
 
   if (toggle && mobileNav) {
-    toggle.addEventListener('click', () => {
-      const open = !mobileNav.classList.contains('is-open');
-      mobileNav.classList.toggle('is-open', open);
-      document.body.classList.toggle('nav-open', open);
-      header?.classList.toggle('nav-is-open', open);
-      toggle.classList.toggle('is-open', open);
-      toggle.setAttribute('aria-expanded', String(open));
-      if (open) main?.setAttribute('aria-hidden', 'true');
-      else main?.removeAttribute('aria-hidden');
-    });
+    const onToggle = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      setNavOpen(!mobileNav.classList.contains('is-open'));
+    };
 
-    mobileNav.addEventListener('click', (e) => {
-      if (e.target === mobileNav) closeNav();
-    });
+    toggle.addEventListener('click', onToggle);
 
-    mobileNav.querySelectorAll('a').forEach((link) => {
+    backdrop?.addEventListener('click', closeNav);
+
+    mobileNav.querySelectorAll('.nav-mobile__panel a').forEach((link) => {
       link.addEventListener('click', closeNav);
     });
 

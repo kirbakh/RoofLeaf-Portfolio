@@ -714,6 +714,12 @@ body.is-loaded .hero .text-reveal.is-visible .text-reveal-inner {
   z-index: 520;
   padding: 1rem clamp(1rem, 4vw, 2rem);
   transition: padding 0.5s var(--ease-out);
+  isolation: isolate;
+}
+
+.site-header .header-shell {
+  position: relative;
+  z-index: 3;
 }
 
 .site-header.is-morphed {
@@ -754,6 +760,12 @@ body.is-loaded .hero .text-reveal.is-visible .text-reveal-inner {
   font-weight: 800;
   color: var(--text);
   letter-spacing: -0.02em;
+  min-width: 0;
+  text-decoration: none;
+}
+
+.logo__name {
+  display: inline;
 }
 
 .logo:hover { color: var(--neon); text-shadow: none; }
@@ -832,7 +844,7 @@ body.is-loaded .hero .text-reveal.is-visible .text-reveal-inner {
   display: flex;
   position: fixed;
   inset: 0;
-  z-index: 480;
+  z-index: 1;
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
@@ -843,18 +855,33 @@ body.is-loaded .hero .text-reveal.is-visible .text-reveal-inner {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.38s var(--ease-out), visibility 0.38s;
+  transition: opacity 0.38s var(--ease-out), visibility 0.38s, background 0.38s;
 }
 
-.nav-mobile::before {
-  content: "";
+.nav-mobile__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(8, 12, 10, 0.72);
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: rgba(8, 12, 10, 0.78);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
   opacity: 0;
   transition: opacity 0.38s var(--ease-out);
+}
+
+.nav-mobile__panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .nav-mobile.is-open {
@@ -863,13 +890,12 @@ body.is-loaded .hero .text-reveal.is-visible .text-reveal-inner {
   pointer-events: auto;
 }
 
-.nav-mobile.is-open::before {
+.nav-mobile.is-open .nav-mobile__backdrop {
   opacity: 1;
 }
 
 .nav-mobile a {
   position: relative;
-  z-index: 1;
   font-family: var(--font-display);
   font-size: 1.4rem;
   font-weight: 700;

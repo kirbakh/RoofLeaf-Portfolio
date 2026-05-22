@@ -1,13 +1,15 @@
 {
   "lang": "en",
   "brand": "Root & Leaf",
+  "brandShort": "R&L",
   "tagline": "Effortless green home",
   "nav": {
     "home": "Home",
     "catalog": "Catalog",
     "journal": "Journal",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "theme": "Theme"
   },
   "meta": {
     "home": "Root & Leaf — houseplants",
