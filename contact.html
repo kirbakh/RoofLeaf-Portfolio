@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <script src="js/theme-boot.js"></script>
+  <meta name="theme-color" content="#121916">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <title>Контакти — Root & Leaf</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/features.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script type="module" src="js/effects.js"></script>
+</head>
+<body data-page="contact" class="theme-premium">
+  <header class="site-header">
+    <div class="header-shell">
+      <div class="container header-inner">
+        <a href="index.html" class="logo"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="rgba(143,212,176,0.15)"/><path d="M18 8c-4 8-10 10-10 16a10 10 0 0 0 20 0c0-6-6-8-10-16z" fill="#8fd4b0"/></svg><span data-i18n="brand">Root & Leaf</span></a>
+        <nav class="nav-desktop" data-i18n-aria="a11y.nav">
+          <a href="index.html" data-i18n="nav.home">Головна</a>
+          <a href="catalog.html" data-i18n="nav.catalog">Каталог</a>
+          <a href="journal.html" data-i18n="nav.journal">Журнал</a>
+          <a href="about.html" data-i18n="nav.about">Про нас</a>
+          <a href="contact.html" data-i18n="nav.contact">Контакти</a>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="icon-btn theme-toggle" data-theme-toggle data-label-light="Світла тема" data-label-dark="Темна тема" aria-label="Світла тема" title="Світла тема" aria-pressed="false">
+            <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="17" cy="6" r="2.5" fill="currentColor" opacity="0.85"/><path d="M12 9c-2.8 0-5 2-5 4.5S9.2 18 12 18s5-2 5-4.5S14.8 9 12 9z" fill="currentColor"/><path d="M12 5.5C10 8.5 7.5 9.5 6 11a6 6 0 0 0 12 0c-1.5-1.5-4-2.5-6-5.5z" fill="var(--accent-2)"/><path d="M7 20h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8.5 20v-2.5c0-1 .8-1.8 3.5-1.8s3.5.8 3.5 1.8V20" stroke="currentColor" stroke-width="1.2" fill="rgba(180,140,100,0.25)"/></svg></span>
+            <span class="theme-toggle__icon theme-toggle__icon--shade" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M14.5 5.5a5.5 5.5 0 1 0 4 9.8A4.5 4.5 0 0 1 14.5 5.5z" fill="currentColor" opacity="0.35"/><path d="M12 9.5c-2.5 0-4.5 1.8-4.5 4s2 4 4.5 4 4.5-1.8 4.5-4-2-4.5-4z" fill="currentColor"/><path d="M12 6C10.2 8.8 8 9.8 6.5 11.2a5.5 5.5 0 0 0 11 0C16 9.8 13.8 8.8 12 6z" fill="var(--accent-deep)"/><path d="M7 20h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8.5 20v-2.2c0-.9.8-1.6 3.5-1.6s3.5.7 3.5 1.6V20" stroke="currentColor" stroke-width="1.2" fill="rgba(90,70,50,0.35)"/></svg></span>
+          </button>
+        <div class="lang-switch"><button type="button" data-lang-btn="ua" class="is-active">UA</button><button type="button" data-lang-btn="en">EN</button></div>
+          <button type="button" class="icon-btn icon-btn--cart" data-cart-open data-i18n-aria="a11y.cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+            <span class="cart-badge" data-cart-count>0</span>
+          </button>
+          <button type="button" class="icon-btn menu-toggle" data-i18n-aria="a11y.menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <nav class="nav-mobile" data-i18n-aria="a11y.mobileNav"><a href="index.html" data-i18n="nav.home">Головна</a><a href="catalog.html" data-i18n="nav.catalog">Каталог</a><a href="journal.html" data-i18n="nav.journal">Журнал</a><a href="about.html" data-i18n="nav.about">Про нас</a><a href="contact.html" data-i18n="nav.contact">Контакти</a></nav>
+  </header>
+
+  <main id="main" class="container">
+    <div class="page-title reveal">
+      <span class="section-eyebrow" data-i18n="contact.eyebrow">Contact</span>
+      <h1 data-i18n="contact.title">Зв'яжіться з нами</h1>
+      <p data-i18n="contact.subtitle">Пн–Пт 10:00–19:00 · відповідь протягом дня</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-cards reveal">
+        <div class="contact-card-item glass-card">
+          <span class="contact-card-icon" aria-hidden="true">✉</span>
+          <div>
+            <strong>Email</strong>
+            <a href="mailto:hello@rootandleaf.ua">hello@rootandleaf.ua</a>
+          </div>
+        </div>
+        <div class="contact-card-item glass-card">
+          <span class="contact-card-icon" aria-hidden="true">☎</span>
+          <div>
+            <strong data-i18n="contact.cards.phone">Телефон</strong>
+            <a href="tel:+380440000000">+38 (044) 000-00-00</a>
+          </div>
+        </div>
+        <div class="contact-card-item glass-card">
+          <span class="contact-card-icon" aria-hidden="true">📍</span>
+          <div>
+            <strong data-i18n="contact.cards.showroom">Шоурум</strong>
+            <p style="margin:0;font-size:0.9rem" data-i18n="contact.cards.showroomText">вул. Зелена, 12, Київ · за записом</p>
+          </div>
+        </div>
+        <div class="contact-card-item glass-card">
+          <span class="contact-card-icon" aria-hidden="true">🚚</span>
+          <div>
+            <strong data-i18n="contact.cards.delivery">Доставка</strong>
+            <p style="margin:0;font-size:0.9rem" data-i18n="contact.cards.deliveryText">Київ, Львів, Одеса — 1–2 дні</p>
+          </div>
+        </div>
+      </div>
+
+      <form id="contact-form" class="contact-form contact-form-card glass-card reveal" novalidate>
+        <h2 data-i18n="contact.formTitle">Напишіть нам</h2>
+        <p data-i18n="contact.formLead">Опишіть куток, світло з вікна — підберемо рослину персонально.</p>
+        <div class="form-row form-row--2">
+          <div class="form-group form-group--icon">
+            <label for="name" data-i18n="contact.form.name">Ім'я</label>
+            <span class="form-icon" aria-hidden="true">👤</span>
+            <input type="text" id="name" name="name" required autocomplete="name" data-i18n-placeholder="contact.form.placeholderName" placeholder="Олена">
+          </div>
+          <div class="form-group form-group--icon">
+            <label for="phone" data-i18n="contact.form.phone">Телефон</label>
+            <span class="form-icon" aria-hidden="true">📱</span>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" data-i18n-placeholder="contact.form.placeholderPhone" placeholder="+380 XX XXX XX XX">
+          </div>
+        </div>
+        <div class="form-group form-group--icon">
+          <label for="email" data-i18n="contact.form.email">Email</label>
+          <span class="form-icon" aria-hidden="true">@</span>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@email.com">
+        </div>
+        <div class="form-group form-group--icon">
+          <label for="message" data-i18n="contact.form.message">Повідомлення</label>
+          <span class="form-icon" aria-hidden="true" style="top:2.5rem">💬</span>
+          <textarea id="message" name="message" required data-i18n-placeholder="contact.form.placeholderMessage" placeholder="Північне вікно, хочу щось невибагливе…"></textarea>
+          <p class="form-hint" data-i18n="contact.form.hint">Мінімум 10 символів · без реальної відправки (demo)</p>
+        </div>
+        <button type="submit" class="btn btn-primary magnetic" data-i18n="cta.send">Надіслати повідомлення</button>
+      </form>
+      <div id="form-success" class="form-success contact-form-card glass-card" hidden role="status"></div>
+    </div>
+
+    <section class="faq-list reveal" aria-labelledby="faq-title">
+      <span class="section-eyebrow" data-i18n="contact.faqEyebrow">FAQ</span>
+      <h2 id="faq-title" data-i18n="sections.faq">Часті питання</h2>
+      <div id="faq-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom"><span data-i18n="footer.copy">© 2026 Root & Leaf</span></div>
+  </footer>
+  <div class="cookie-banner"><p data-i18n="cookie.text">Cookies</p><button type="button" class="btn btn-primary magnetic" data-cookie-accept data-i18n="cookie.accept">Прийняти</button></div>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/contact.js"></script>
+</body>
+</html>

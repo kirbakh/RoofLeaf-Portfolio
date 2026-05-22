@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <script src="js/theme-boot.js"></script>
+  <meta name="theme-color" content="#121916">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="description" content="Журнал Root & Leaf — гайди по догляду за кімнатними рослинами.">
+  <title>Журнал — Root & Leaf</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/features.css">
+  <link rel="stylesheet" href="css/journal.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script type="module" src="js/effects.js"></script>
+</head>
+<body data-page="journal" class="theme-premium">
+  <header class="site-header">
+    <div class="header-shell">
+      <div class="container header-inner">
+      <a href="index.html" class="logo"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="rgba(0,255,157,0.12)"/><path d="M18 8c-4 8-10 10-10 16a10 10 0 0 0 20 0c0-6-6-8-10-16z" fill="#00ff9d"/></svg><span data-i18n="brand">Root & Leaf</span></a>
+      <nav class="nav-desktop" data-i18n-aria="a11y.nav">
+        <a href="index.html" data-i18n="nav.home">Головна</a>
+        <a href="catalog.html" data-i18n="nav.catalog">Каталог</a>
+        <a href="journal.html" data-i18n="nav.journal">Журнал</a>
+        <a href="about.html" data-i18n="nav.about">Про нас</a>
+        <a href="contact.html" data-i18n="nav.contact">Контакти</a>
+      </nav>
+      <div class="header-actions">
+          <button type="button" class="icon-btn theme-toggle" data-theme-toggle data-label-light="Світла тема" data-label-dark="Темна тема" aria-label="Світла тема" title="Світла тема" aria-pressed="false">
+            <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="17" cy="6" r="2.5" fill="currentColor" opacity="0.85"/><path d="M12 9c-2.8 0-5 2-5 4.5S9.2 18 12 18s5-2 5-4.5S14.8 9 12 9z" fill="currentColor"/><path d="M12 5.5C10 8.5 7.5 9.5 6 11a6 6 0 0 0 12 0c-1.5-1.5-4-2.5-6-5.5z" fill="var(--accent-2)"/><path d="M7 20h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8.5 20v-2.5c0-1 .8-1.8 3.5-1.8s3.5.8 3.5 1.8V20" stroke="currentColor" stroke-width="1.2" fill="rgba(180,140,100,0.25)"/></svg></span>
+            <span class="theme-toggle__icon theme-toggle__icon--shade" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M14.5 5.5a5.5 5.5 0 1 0 4 9.8A4.5 4.5 0 0 1 14.5 5.5z" fill="currentColor" opacity="0.35"/><path d="M12 9.5c-2.5 0-4.5 1.8-4.5 4s2 4 4.5 4 4.5-1.8 4.5-4-2-4.5-4z" fill="currentColor"/><path d="M12 6C10.2 8.8 8 9.8 6.5 11.2a5.5 5.5 0 0 0 11 0C16 9.8 13.8 8.8 12 6z" fill="var(--accent-deep)"/><path d="M7 20h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8.5 20v-2.2c0-.9.8-1.6 3.5-1.6s3.5.7 3.5 1.6V20" stroke="currentColor" stroke-width="1.2" fill="rgba(90,70,50,0.35)"/></svg></span>
+          </button>
+        <div class="lang-switch"><button type="button" data-lang-btn="ua" class="is-active">UA</button><button type="button" data-lang-btn="en">EN</button></div>
+        <button type="button" class="icon-btn icon-btn--cart" data-cart-open data-i18n-aria="a11y.cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+          <span class="cart-badge" data-cart-count>0</span>
+        </button>
+        <button type="button" class="icon-btn menu-toggle" aria-label="Меню"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+      </div>
+          </div>
+    </div>
+    <nav class="nav-mobile"><a href="index.html">Головна</a><a href="catalog.html">Каталог</a><a href="journal.html">Журнал</a><a href="about.html">Про нас</a><a href="contact.html">Контакти</a></nav>
+  </header>
+
+  <main id="main" class="journal-page">
+    <header class="journal-hero container reveal">
+      <div class="journal-hero__inner">
+        <span class="section-eyebrow" data-i18n="journal.eyebrow">Guides</span>
+        <h1 class="journal-hero__title" data-i18n="nav.journal">Журнал</h1>
+        <p class="journal-hero__lead" data-i18n="journal.lead">Гайди по поливу, світлу та вибору рослин — коротко й по суті для містян.</p>
+        <div class="journal-hero__stats" aria-label="Статистика журналу">
+          <span class="journal-stat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19h16M6 17V9M12 17V5M18 17v-7"/></svg>
+            <strong id="journal-stat-count">6</strong>
+            <span data-i18n="journal.statArticles">статей</span>
+          </span>
+          <span class="journal-stat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 7h10v10H7z"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/></svg>
+            <strong id="journal-stat-topics">2</strong>
+            <span data-i18n="journal.statTopics">теми</span>
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container journal-toolbar reveal">
+      <p class="journal-toolbar__label" data-i18n="sections.journalTags">Теги статей</p>
+    </div>
+
+    <div class="container journal-filter glass-card reveal">
+      <div id="journal-tags" class="journal-tags" role="group" data-i18n-aria="sections.journalTags"></div>
+    </div>
+
+    <div class="container">
+      <section id="journal-featured" class="journal-featured" hidden aria-label="Рекомендована стаття"></section>
+      <div id="journal-list" class="journal-grid" aria-live="polite"></div>
+    </div>
+
+    <div id="article-detail" hidden></div>
+
+    <section class="container journal-newsletter reveal">
+      <div class="newsletter-strip glass-card">
+        <div>
+          <h2 data-i18n="sections.newsletter">Листок на пошту</h2>
+          <p data-i18n="sections.newsletterHint">Раз на місяць — поради по догляду, без спаму.</p>
+        </div>
+        <form class="newsletter-form" data-i18n-aria="sections.newsletterForm">
+          <input type="email" placeholder="email@example.com" data-i18n-placeholder="contact.form.email" data-i18n-aria="contact.form.email">
+          <button type="submit" class="btn btn-primary magnetic" data-i18n="cta.subscribe">Підписатися</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-bottom"><span data-i18n="footer.copy">© 2026 Root & Leaf</span></div></footer>
+  <div class="cookie-banner"><p data-i18n="cookie.text">Cookies</p><button type="button" class="btn btn-primary" data-cookie-accept data-i18n="cookie.accept">Прийняти</button></div>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/journal.js"></script>
+</body>
+</html>

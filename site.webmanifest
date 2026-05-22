@@ -1,0 +1,23 @@
+{
+  "name": "Root & Leaf",
+  "short_name": "Root & Leaf",
+  "description": "Premium Urban Botanics",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#121916",
+  "background_color": "#121916",
+  "display": "standalone",
+  "lang": "uk"
+}

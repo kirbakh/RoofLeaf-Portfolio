@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <script src="js/theme-boot.js"></script>
+  <meta name="theme-color" content="#121916">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="description" content="Каталог кімнатних рослин Root & Leaf — фільтри за світлом, доглядом і ціною.">
+  <title>Каталог — Root & Leaf</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/features.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script type="module" src="js/effects.js"></script>
+</head>
+<body data-page="catalog" class="theme-premium">
+  <header class="site-header">
+    <div class="header-shell">
+      <div class="container header-inner">
+      <a href="index.html" class="logo"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="rgba(0,255,157,0.12)"/><path d="M18 8c-4 8-10 10-10 16a10 10 0 0 0 20 0c0-6-6-8-10-16z" fill="#00ff9d"/></svg><span data-i18n="brand">Root & Leaf</span></a>
+      <nav class="nav-desktop" data-i18n-aria="a11y.nav">
+        <a href="index.html" data-i18n="nav.home">Головна</a>
+        <a href="catalog.html" data-i18n="nav.catalog">Каталог</a>
+        <a href="journal.html" data-i18n="nav.journal">Журнал</a>
+        <a href="about.html" data-i18n="nav.about">Про нас</a>
+        <a href="contact.html" data-i18n="nav.contact">Контакти</a>
+      </nav>
+      <div class="header-actions">
+          <button type="button" class="icon-btn theme-toggle" data-theme-toggle data-label-light="Світла тема" data-label-dark="Темна тема" aria-label="Світла тема" title="Світла тема" aria-pressed="false">
+            <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="17" cy="6" r="2.5" fill="currentColor" opacity="0.85"/><path d="M12 9c-2.8 0-5 2-5 4.5S9.2 18 12 18s5-2 5-4.5S14.8 9 12 9z" fill="currentColor"/><path d="M12 5.5C10 8.5 7.5 9.5 6 11a6 6 0 0 0 12 0c-1.5-1.5-4-2.5-6-5.5z" fill="var(--accent-2)"/><path d="M7 20h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8.5 20v-2.5c0-1 .8-1.8 3.5-1.8s3.5.8 3.5 1.8V20" stroke="currentColor" stroke-width="1.2" fill="rgba(180,140,100,0.25)"/></svg></span>
+            <span class="theme-toggle__icon theme-toggle__icon--shade" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M14.5 5.5a5.5 5.5 0 1 0 4 9.8A4.5 4.5 0 0 1 14.5 5.5z" fill="currentColor" opacity="0.35"/><path d="M12 9.5c-2.5 0-4.5 1.8-4.5 4s2 4 4.5 4 4.5-1.8 4.5-4-2-4.5-4z" fill="currentColor"/><path d="M12 6C10.2 8.8 8 9.8 6.5 11.2a5.5 5.5 0 0 0 11 0C16 9.8 13.8 8.8 12 6z" fill="var(--accent-deep)"/><path d="M7 20h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8.5 20v-2.2c0-.9.8-1.6 3.5-1.6s3.5.7 3.5 1.6V20" stroke="currentColor" stroke-width="1.2" fill="rgba(90,70,50,0.35)"/></svg></span>
+          </button>
+        <div class="lang-switch" role="group" data-i18n-aria="a11y.lang">
+          <button type="button" data-lang-btn="ua" class="is-active" aria-pressed="true">UA</button>
+          <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="icon-btn icon-btn--cart" data-cart-open data-i18n-aria="a11y.cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+          <span class="cart-badge" data-cart-count>0</span>
+        </button>
+        <button type="button" class="icon-btn menu-toggle" aria-expanded="false" data-i18n-aria="a11y.menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+      </div>
+          </div>
+    </div>
+    <nav class="nav-mobile" data-i18n-aria="a11y.mobileNav">
+      <a href="index.html" data-i18n="nav.home">Головна</a>
+      <a href="catalog.html" data-i18n="nav.catalog">Каталог</a>
+      <a href="journal.html" data-i18n="nav.journal">Журнал</a>
+      <a href="about.html" data-i18n="nav.about">Про нас</a>
+      <a href="contact.html" data-i18n="nav.contact">Контакти</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="container page-title reveal">
+      <span class="section-eyebrow" data-i18n="catalog.eyebrow">Collection</span>
+      <h1 data-i18n="nav.catalog">Каталог</h1>
+      <p><span data-i18n="catalog.subtitle">12 рослин · преміум підбір ·</span> <span id="catalog-count">—</span></p>
+    </div>
+
+    <div class="container promo-banner glass-card reveal">
+      <p><span data-i18n="catalog.promo">🌱 Весняна акція:</span> <a href="checkout.html" data-i18n="catalog.promoLink">Оформити</a></p>
+    </div>
+
+    <div class="container catalog-layout">
+      <details class="filters-wrap">
+        <summary class="filters-wrap__summary" data-i18n="sections.filters">Фільтри</summary>
+      <aside class="filters-panel glass-card" data-i18n-aria="sections.filters">
+        <h2 class="filters-panel__title" style="font-size:1.1rem;margin-bottom:1rem" data-i18n="sections.filters">Фільтри</h2>
+
+        <div class="filter-group">
+          <label data-i18n="filters.light">Світло</label>
+          <div class="filter-chips">
+            <button type="button" class="chip" data-filter="light" data-value="low">low</button>
+            <button type="button" class="chip" data-filter="light" data-value="medium">medium</button>
+            <button type="button" class="chip" data-filter="light" data-value="bright">bright</button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label data-i18n="filters.care">Догляд</label>
+          <div class="filter-chips">
+            <button type="button" class="chip" data-filter="care" data-value="easy">easy</button>
+            <button type="button" class="chip" data-filter="care" data-value="medium">medium</button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label data-i18n="filters.size">Розмір</label>
+          <div class="filter-chips">
+            <button type="button" class="chip" data-filter="size" data-value="S">S</button>
+            <button type="button" class="chip" data-filter="size" data-value="M">M</button>
+            <button type="button" class="chip" data-filter="size" data-value="L">L</button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label for="price-range"><span data-i18n="filters.price">Ціна до</span>: <span id="price-label">2000 ₴</span></label>
+          <input type="range" id="price-range" class="price-range" min="300" max="2000" value="2000" step="50">
+        </div>
+
+        <button type="button" class="btn btn-ghost" id="filter-reset" style="width:100%" data-i18n="filters.reset">Скинути</button>
+      </aside>
+      </details>
+
+      <div class="catalog-main">
+        <div class="catalog-toolbar">
+          <input type="search" id="search-input" class="search-input" placeholder="Монстера, потос…" data-i18n-placeholder="sections.searchExample" data-i18n-aria="sections.search">
+          <label class="sr-only" for="sort-select" data-i18n="sections.sort">Сортування</label>
+          <select id="sort-select" class="sort-select">
+            <option value="ratingDesc" data-i18n-sort="ratingDesc">Рейтинг</option>
+            <option value="priceAsc" data-i18n-sort="priceAsc">Ціна ↑</option>
+            <option value="priceDesc" data-i18n-sort="priceDesc">Ціна ↓</option>
+            <option value="nameAsc" data-i18n-sort="nameAsc">Назва</option>
+          </select>
+        </div>
+        <div id="catalog-grid" class="plants-grid stagger-grid" aria-live="polite"></div>
+        <nav class="pagination" data-i18n-aria="sections.pagination">
+          <button type="button" disabled data-i18n="pagination.prev">Назад</button>
+          <span class="is-current" aria-current="page">1</span>
+          <button type="button" disabled>2</button>
+          <button type="button" data-i18n="pagination.next">Далі</button>
+        </nav>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="border:none;padding:0">
+      <span data-i18n="footer.copy">© 2026 Root & Leaf</span>
+      <span data-i18n="footer.made">Статичний сайт для портфоліо</span>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" role="dialog" aria-label="Cookies">
+    <p data-i18n="cookie.text">Cookies (mock)</p>
+    <button type="button" class="btn btn-primary" data-cookie-accept data-i18n="cookie.accept">Прийняти</button>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/catalog.js"></script>
+</body>
+</html>

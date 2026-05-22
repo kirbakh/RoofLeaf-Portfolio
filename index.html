@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <script src="js/theme-boot.js"></script>
+  <meta name="theme-color" content="#121916">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="description" content="Root & Leaf — преміальні кімнатні рослини з гайдами для містян України.">
+  <title>Root & Leaf — Premium Urban Botanics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/features.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script type="module" src="js/effects.js"></script>
+</head>
+<body data-page="home" class="theme-premium">
+  <a href="#main" class="sr-only" data-i18n="a11y.skip">Перейти до контенту</a>
+
+  <header class="site-header">
+    <div class="header-shell">
+      <div class="container header-inner">
+        <a href="index.html" class="logo" aria-label="Root & Leaf">
+          <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="rgba(143,212,176,0.15)"/><path d="M18 8c-4 8-10 10-10 16a10 10 0 0 0 20 0c0-6-6-8-10-16z" fill="#8fd4b0"/></svg>
+          <span data-i18n="brand">Root & Leaf</span>
+        </a>
+        <nav class="nav-desktop" data-i18n-aria="a11y.nav">
+          <a href="index.html" data-i18n="nav.home">Головна</a>
+          <a href="catalog.html" data-i18n="nav.catalog">Каталог</a>
+          <a href="journal.html" data-i18n="nav.journal">Журнал</a>
+          <a href="about.html" data-i18n="nav.about">Про нас</a>
+          <a href="contact.html" data-i18n="nav.contact">Контакти</a>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="icon-btn theme-toggle" data-theme-toggle data-label-light="Світла тема" data-label-dark="Темна тема" aria-label="Світла тема" title="Світла тема" aria-pressed="false">
+            <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="17" cy="6" r="2.5" fill="currentColor" opacity="0.85"/><path d="M12 9c-2.8 0-5 2-5 4.5S9.2 18 12 18s5-2 5-4.5S14.8 9 12 9z" fill="currentColor"/><path d="M12 5.5C10 8.5 7.5 9.5 6 11a6 6 0 0 0 12 0c-1.5-1.5-4-2.5-6-5.5z" fill="var(--accent-2)"/><path d="M7 20h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8.5 20v-2.5c0-1 .8-1.8 3.5-1.8s3.5.8 3.5 1.8V20" stroke="currentColor" stroke-width="1.2" fill="rgba(180,140,100,0.25)"/></svg></span>
+            <span class="theme-toggle__icon theme-toggle__icon--shade" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M14.5 5.5a5.5 5.5 0 1 0 4 9.8A4.5 4.5 0 0 1 14.5 5.5z" fill="currentColor" opacity="0.35"/><path d="M12 9.5c-2.5 0-4.5 1.8-4.5 4s2 4 4.5 4 4.5-1.8 4.5-4-2-4.5-4z" fill="currentColor"/><path d="M12 6C10.2 8.8 8 9.8 6.5 11.2a5.5 5.5 0 0 0 11 0C16 9.8 13.8 8.8 12 6z" fill="var(--accent-deep)"/><path d="M7 20h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8.5 20v-2.2c0-.9.8-1.6 3.5-1.6s3.5.7 3.5 1.6V20" stroke="currentColor" stroke-width="1.2" fill="rgba(90,70,50,0.35)"/></svg></span>
+          </button>
+          <div class="lang-switch" role="group" data-i18n-aria="a11y.lang">
+            <button type="button" data-lang-btn="ua" class="is-active" aria-pressed="true">UA</button>
+            <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+          </div>
+          <button type="button" class="icon-btn icon-btn--cart" data-cart-open data-i18n-aria="a11y.cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+          <span class="cart-badge" data-cart-count>0</span>
+        </button>
+          <button type="button" class="icon-btn menu-toggle" aria-expanded="false" data-i18n-aria="a11y.menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <nav class="nav-mobile" data-i18n-aria="a11y.mobileNav">
+      <a href="index.html" data-i18n="nav.home">Головна</a>
+      <a href="catalog.html" data-i18n="nav.catalog">Каталог</a>
+      <a href="journal.html" data-i18n="nav.journal">Журнал</a>
+      <a href="about.html" data-i18n="nav.about">Про нас</a>
+      <a href="contact.html" data-i18n="nav.contact">Контакти</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="hero-badge" data-i18n="tagline">Зелений дім без зусиль</span>
+          <h1 class="hero-title reveal">
+            <span data-i18n="hero.title">Дім, де рослини</span><br>
+            <span class="hero-title-accent" data-i18n="hero.titleAccent">живуть, а не виживають</span>
+          </h1>
+          <p class="hero-subtitle reveal" data-i18n="hero.subtitle">Преміальні кімнатні рослини з гайдами по поливу. Доставка Київ · Львів · Одеса.</p>
+          <div class="hero-cta reveal">
+            <a href="catalog.html" class="btn btn-primary magnetic" data-i18n="cta.catalog">До каталогу</a>
+            <a href="about.html" class="btn btn-secondary magnetic" data-i18n="cta.learn">Дізнатися більше</a>
+          </div>
+          <div class="hero-stats glass-card reveal">
+            <div class="hero-stat">
+              <span class="hero-stat__value" data-count="12000" data-suffix="+">0</span>
+              <span class="hero-stat__label" data-i18n="hero.statDeliveries">доставок</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat__value" data-count="4.8" data-decimals="1">0</span>
+              <span class="hero-stat__label" data-i18n="hero.statRating">рейтинг</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat__value" data-count="48">0</span>
+              <span class="hero-stat__label" data-i18n="hero.statCities">міст UA</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual reveal" data-parallax="0.06">
+          <img class="hero-image" src="assets/images/site/hero.jpg" data-i18n-alt="home.heroAlt" alt="Зелена вітальня з кімнатними рослинами" width="800" height="1000" sizes="(max-width: 959px) 100vw, 50vw" loading="eager" fetchpriority="high" decoding="async" onerror="this.onerror=null;this.src='assets/images/placeholder.svg'">
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Monstera · Pothos · Ficus · Calathea · ZZ Plant · Begonia ·</span>
+        <span>Monstera · Pothos · Ficus · Calathea · ZZ Plant · Begonia ·</span>
+        <span>Monstera · Pothos · Ficus · Calathea · ZZ Plant · Begonia ·</span>
+        <span>Monstera · Pothos · Ficus · Calathea · ZZ Plant · Begonia ·</span>
+      </div>
+    </div>
+
+    <section class="section gallery-section" aria-labelledby="gallery-title">
+      <div class="container">
+        <span class="section-eyebrow reveal" data-i18n="home.galleryEyebrow">Inspiration</span>
+        <h2 id="gallery-title" class="section-title reveal" data-i18n="home.galleryTitle">Життя з рослинами</h2>
+        <p class="gallery-section__lead reveal" data-i18n="home.galleryLead">Інтерʼєри, теплиці, догляд і зелені кутки — натхнення для вашого дому.</p>
+        <div id="photo-mosaic" class="photo-mosaic stagger-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="usp-title">
+      <div class="container">
+        <span class="section-eyebrow reveal" data-i18n="home.uspEyebrow">Premium care</span>
+        <h2 id="usp-title" class="section-title text-reveal" data-i18n="usp.title">Чому Root & Leaf</h2>
+        <div class="usp-grid stagger-grid">
+          <div class="usp-card glass-card reveal reveal-scale" data-i18n-usp>
+            <div class="usp-card__icon">📖</div>
+            <h3 data-usp-title>Гайд у кожному горщику</h3>
+            <p data-usp-text>PDF + QR: полив, світло, пересадка без зайвого тексту.</p>
+          </div>
+          <div class="usp-card glass-card reveal reveal-scale" data-i18n-usp>
+            <div class="usp-card__icon">🏷️</div>
+            <h3 data-usp-title>Чесні ярлики</h3>
+            <p data-usp-text>Світло, складність, розмір — перевірені агрономом.</p>
+          </div>
+          <div class="usp-card glass-card reveal reveal-scale" data-i18n-usp>
+            <div class="usp-card__icon">💬</div>
+            <h3 data-usp-title>Підтримка 15 хв</h3>
+            <p data-usp-text>Надішліть фото кутка — підберемо рослину в чаті.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="popular-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <span class="section-eyebrow">Collection 2026</span>
+            <h2 id="popular-title" class="section-title" data-i18n="sections.popular">Популярне зараз</h2>
+          </div>
+          <a href="catalog.html" class="magnetic" data-i18n="cta.catalog">До каталогу →</a>
+        </div>
+        <div id="popular-plants" class="plants-grid stagger-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="articles-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <span class="section-eyebrow">Journal</span>
+            <h2 id="articles-title" class="section-title" data-i18n="sections.articles">З журналу</h2>
+          </div>
+          <a href="journal.html" data-i18n="sections.readMore">Читати →</a>
+        </div>
+        <div id="home-articles" class="articles-grid stagger-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="reviews-title">
+      <div class="container">
+        <span class="section-eyebrow reveal">Testimonials</span>
+        <h2 id="reviews-title" class="section-title reveal" data-i18n="sections.reviews">Відгуки клієнтів</h2>
+        <div id="home-reviews" class="reviews-slider stagger-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="newsletter-strip glass-card reveal">
+          <div>
+            <h2 data-i18n="sections.newsletter">Листок на пошту</h2>
+            <p data-i18n="sections.newsletterHint">Раз на місяць — поради по догляду, без спаму.</p>
+          </div>
+          <form class="newsletter-form" data-i18n-aria="sections.newsletterForm">
+            <input type="email" placeholder="email@example.com" data-i18n-placeholder="contact.form.email" data-i18n-aria="contact.form.email">
+            <button type="submit" class="btn btn-primary magnetic" data-i18n="cta.subscribe">Підписатися</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-block glass-card reveal">
+          <h2 class="text-reveal" data-i18n="home.ctaTitle">Готові посадити перше?</h2>
+          <p data-i18n="home.ctaText">Оберіть рослину за світлом у квартирі — ми підкажемо.</p>
+          <a href="catalog.html" class="btn btn-primary magnetic" data-i18n="cta.catalog">До каталогу</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top glass-card reveal reveal-blur">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span data-i18n="brand">Root & Leaf</span></a>
+        <p data-i18n="tagline">Зелений дім без зусиль</p>
+        <p class="footer-desc" data-i18n="home.footerDesc">Преміальні рослини з гайдами. Київ · Львів · Одеса · Нова Пошта.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="home.footerNav">Навігація</h4>
+        <nav class="footer-nav">
+          <a href="catalog.html" data-i18n="nav.catalog">Каталог</a>
+          <a href="journal.html" data-i18n="nav.journal">Журнал</a>
+          <a href="about.html" data-i18n="nav.about">Про нас</a>
+          <a href="contact.html" data-i18n="nav.contact">Контакти</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="home.footerContacts">Контакти</h4>
+        <p><a href="mailto:hello@rootandleaf.ua">hello@rootandleaf.ua</a></p>
+        <p><a href="tel:+380440000000">+38 (044) 000-00-00</a></p>
+        <p data-i18n="home.footerHours">Пн–Пт 10:00–19:00</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="home.footerSocial">Соцмережі</h4>
+        <div class="footer-social">
+          <a href="#" data-i18n-aria="a11y.instagram">IG</a>
+          <a href="#" data-i18n-aria="a11y.telegram">TG</a>
+          <a href="#" data-i18n-aria="a11y.pinterest">PI</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span data-i18n="footer.copy">© 2026 Root & Leaf</span>
+      <span data-i18n="footer.made">Статичний сайт для портфоліо</span>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" role="dialog" data-i18n-aria="a11y.cookies">
+    <p data-i18n="cookie.text">Cookies (mock)</p>
+    <button type="button" class="btn btn-primary magnetic" data-cookie-accept data-i18n="cookie.accept">Прийняти</button>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+[
+  { "src": "assets/images/site/gallery-1.jpg", "alt": "Монстера в інтер'єрі", "caption": "Монстера · вітальня" },
+  { "src": "assets/images/site/gallery-2.jpg", "alt": "Підвісний потос", "caption": "Потос · ампель" },
+  { "src": "assets/images/site/gallery-3.jpg", "alt": "Фікус ліра біля вікна", "caption": "Фікус · світло" },
+  { "src": "assets/images/site/gallery-4.jpg", "alt": "Сукуленти на підвіконні", "caption": "Сукуленти · алое" },
+  { "src": "assets/images/site/gallery-5.jpg", "alt": "Спатифілум з білими квітами", "caption": "Спатифілум · квітіння" },
+  { "src": "assets/images/site/gallery-6.jpg", "alt": "Заміокулькас в офісі", "caption": "ZZ · офіс" },
+  { "src": "assets/images/site/gallery-7.jpg", "alt": "Хлорофітум у підвісному кашпо", "caption": "Хлорофітум · pet-friendly" },
+  { "src": "assets/images/site/gallery-8.jpg", "alt": "Бегонія з крапчастим листям", "caption": "Бегонія · патерн" }
+]

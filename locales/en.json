@@ -1,0 +1,302 @@
+{
+  "lang": "en",
+  "brand": "Root & Leaf",
+  "tagline": "Effortless green home",
+  "nav": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "journal": "Journal",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "meta": {
+    "home": "Root & Leaf — houseplants",
+    "catalog": "Catalog — Root & Leaf",
+    "journal": "Journal — Root & Leaf",
+    "about": "About — Root & Leaf",
+    "contact": "Contact — Root & Leaf",
+    "plant": "Plant — Root & Leaf",
+    "checkout": "Checkout — Root & Leaf"
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "nav": "Main navigation",
+    "mobileNav": "Mobile navigation",
+    "menu": "Menu",
+    "lang": "Language",
+    "cart": "Cart",
+    "close": "Close",
+    "breadcrumb": "Breadcrumb",
+    "backToTop": "Back to top",
+    "backToTopTitle": "Top",
+    "rating": "Rating",
+    "photo": "Photo",
+    "previewPhoto": "View photo",
+    "preview": "Preview",
+    "less": "Decrease quantity",
+    "more": "Increase quantity",
+    "remove": "Remove",
+    "cookies": "Cookie notice",
+    "instagram": "Instagram",
+    "telegram": "Telegram",
+    "pinterest": "Pinterest"
+  },
+  "cta": {
+    "catalog": "Browse catalog",
+    "learn": "Learn more",
+    "subscribe": "Subscribe",
+    "send": "Send message",
+    "accept": "Accept",
+    "viewPlant": "Open plant page",
+    "addFavorite": "Save",
+    "removeFavorite": "Remove from saved",
+    "addCart": "Add to cart",
+    "addedToast": "Added to cart",
+    "checkout": "Checkout",
+    "continue": "Continue",
+    "back": "Back",
+    "pay": "Pay now",
+    "continueShopping": "Continue shopping",
+    "toPayment": "Continue to payment",
+    "readArticle": "Read →"
+  },
+  "hero": {
+    "title": "A home where plants",
+    "titleAccent": "thrive, not just survive",
+    "subtitle": "Houseplants with watering guides for urban dwellers 25–40. Delivery across Ukraine, support in Ukrainian.",
+    "statDeliveries": "deliveries",
+    "statRating": "rating",
+    "statCities": "cities in UA"
+  },
+  "home": {
+    "galleryEyebrow": "Inspiration",
+    "galleryTitle": "Life with plants",
+    "galleryLead": "Interiors, greenhouses, care tips and cozy corners — inspiration for your home.",
+    "heroAlt": "Green living room with houseplants",
+    "uspEyebrow": "Premium care",
+    "ctaTitle": "Ready to plant your first?",
+    "ctaText": "Pick a plant for your light conditions — we'll guide you.",
+    "footerDesc": "Premium plants with care guides. Kyiv · Lviv · Odesa · Nova Poshta.",
+    "footerNav": "Navigation",
+    "footerContacts": "Contact",
+    "footerHours": "Mon–Fri 10:00–19:00",
+    "footerSocial": "Social",
+    "newsletterSuccess": "Thanks for subscribing!"
+  },
+  "usp": {
+    "title": "Why Root & Leaf",
+    "items": [
+      { "title": "Guide in every pot", "text": "Short care instructions for water, light, and repotting — no Wikipedia fluff." },
+      { "title": "Honest labels", "text": "Light, difficulty, and size — no \"easy\" on a monstera in a dark room." },
+      { "title": "Human support", "text": "Send a photo of your corner — we'll suggest a plant in 15 minutes." }
+    ]
+  },
+  "sections": {
+    "popular": "Popular now",
+    "articles": "From the journal",
+    "reviews": "Customer reviews",
+    "newsletter": "Newsletter",
+    "newsletterHint": "Once a month — care tips, no spam.",
+    "team": "Team",
+    "mission": "Mission",
+    "stats": "By the numbers",
+    "faq": "FAQ",
+    "filters": "Filters",
+    "search": "Search by name",
+    "searchExample": "Monstera, pothos…",
+    "newsletterForm": "Newsletter signup",
+    "journalTags": "Article tags",
+    "pagination": "Pages (mock)",
+    "sort": "Sort",
+    "related": "Similar plants",
+    "care": "Care",
+    "notFound": "Plant not found",
+    "loadError": "Failed to load data. Please refresh the page.",
+    "emptyCatalog": "No plants match your filters.",
+    "emptyJournal": "No articles found",
+    "inStock": "In stock",
+    "outOfStock": "Out of stock",
+    "allArticles": "All articles",
+    "readMore": "Read →",
+    "minutes": "min read",
+    "loading": "Loading…",
+    "loadingPlants": "Loading plants…",
+    "loadingPlant": "Loading plant…",
+    "loadingArticles": "Loading articles…",
+    "loadingGallery": "Loading gallery…",
+    "retry": "Try again",
+    "catalogCount": "shown"
+  },
+  "care": {
+    "easy": "Easy care",
+    "medium": "Medium care",
+    "light": { "low": "Low light", "medium": "Indirect", "bright": "Bright" },
+    "size": { "S": "Small", "M": "Medium", "L": "Large" }
+  },
+  "plant": {
+    "pot": "Pot",
+    "size": "Size",
+    "light": "Light",
+    "care": "Care",
+    "watering": "watering",
+    "humidity": "Humidity",
+    "reviews": "reviews",
+    "zoomHint": "Photo — zoom · card — details",
+    "altFallback": "Plant",
+    "missingId": "Choose a plant from the catalog.",
+    "retry": "Try again",
+    "careEyebrow": "Care guide",
+    "relatedEyebrow": "Collection"
+  },
+  "sort": {
+    "priceAsc": "Price ↑",
+    "priceDesc": "Price ↓",
+    "nameAsc": "Name A–Z",
+    "ratingDesc": "Rating"
+  },
+  "catalog": {
+    "eyebrow": "Collection",
+    "subtitle": "12 plants · premium picks ·",
+    "promo": "🌱 Spring offer: −10% on a set of 3 plants ·",
+    "promoLink": "Checkout"
+  },
+  "journal": {
+    "eyebrow": "Guides",
+    "lead": "Watering, light, and plant picks — concise guides for urban homes.",
+    "statArticles": "articles",
+    "statTopics": "topics",
+    "featuredLabel": "Featured",
+    "relatedTitle": "Keep reading"
+  },
+  "filters": {
+    "light": "Light",
+    "care": "Care",
+    "size": "Size",
+    "price": "Max price",
+    "reset": "Reset"
+  },
+  "tags": {
+    "all": "All",
+    "догляд": "Care",
+    "вибір": "Selection"
+  },
+  "cart": {
+    "title": "Cart",
+    "total": "Total",
+    "empty": "Your cart is empty",
+    "emptyCheckout": "Your cart is empty."
+  },
+  "checkout": {
+    "eyebrow": "Mock checkout",
+    "title": "Checkout",
+    "subtitle": "Demo payment — no real charge",
+    "stepsLabel": "Checkout steps",
+    "stepCart": "1. Cart",
+    "stepDelivery": "2. Delivery",
+    "stepPayment": "3. Payment",
+    "stepDone": "4. Done",
+    "yourCart": "Your cart",
+    "note": "Delivery across Ukraine · pot packaging included",
+    "delivery": "Delivery",
+    "payment": "Payment (mock)",
+    "paymentHint": "Test card data — no real charge",
+    "successTitle": "Thank you for your order!",
+    "successText": "Mock payment succeeded. We'll text you when your plants are on the way.",
+    "summary": "Summary",
+    "items": "Items",
+    "shipping": "Shipping",
+    "due": "Total due",
+    "formName": "Name",
+    "formPhone": "Phone",
+    "formCity": "City",
+    "formAddress": "Address / Nova Poshta branch",
+    "formCard": "Card number",
+    "formExp": "Expiry",
+    "placeholderPhone": "+380",
+    "placeholderCity": "Kyiv, Lviv, Odesa…"
+  },
+  "about": {
+    "title": "About Root & Leaf",
+    "intro": "We're a Kyiv team of biophilic design enthusiasts. Since 2022 we've helped city dwellers create green corners without the fear of killing everything.",
+    "missionText": "Make plant care as natural as tidying the kitchen: clear rules, honest expectations, support nearby.",
+    "eyebrowEst": "Est. 2022 · Kyiv",
+    "eyebrowMission": "Mission",
+    "eyebrowStats": "Numbers",
+    "eyebrowTeam": "Team",
+    "greenhouseAlt": "Root & Leaf greenhouse with tropical plants",
+    "ctaTitle": "Questions?",
+    "stats": [
+      { "value": "12,000+", "label": "pots delivered" },
+      { "value": "4.8", "label": "average rating" },
+      { "value": "48", "label": "cities in Ukraine" },
+      { "value": "6", "label": "years of experience" }
+    ],
+    "team": [
+      { "name": "Oksana Rudenko", "role": "Founder · Kyiv", "bio": "Biophilic design, plant matching" },
+      { "name": "Maksym Hordiienko", "role": "Agronomist · Lviv", "bio": "Substrates, repotting" },
+      { "name": "Sofia Melnyk", "role": "Content · Odesa", "bio": "Journal, guides" },
+      { "name": "Ihor Vasilenko", "role": "Logistics · Kyiv", "bio": "Delivery, packaging" }
+    ]
+  },
+  "contact": {
+    "title": "Get in touch",
+    "subtitle": "Mon–Fri 10:00–19:00. We'll reply within one business day.",
+    "eyebrow": "Contact",
+    "formTitle": "Write to us",
+    "formLead": "Describe your corner and window light — we'll suggest a plant personally.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "success": "Thank you! We received your message and will reply soon.",
+      "hint": "At least 10 characters · no real send (demo)",
+      "placeholderName": "Jane",
+      "placeholderPhone": "+380 XX XXX XX XX",
+      "placeholderMessage": "North-facing window, something low-maintenance…"
+    },
+    "cards": {
+      "phone": "Phone",
+      "showroom": "Showroom",
+      "showroomText": "12 Zelena St, Kyiv · by appointment",
+      "delivery": "Delivery",
+      "deliveryText": "Kyiv, Lviv, Odesa — 1–2 days"
+    },
+    "faqEyebrow": "FAQ",
+    "faq": [
+      {
+        "q": "How do I pick a plant for a dark room?",
+        "a": "Use the \"low light\" filter in the catalog or send a photo of your corner in the form above."
+      },
+      {
+        "q": "Do you deliver to Odesa?",
+        "a": "Yes, 1–2 days via Nova Poshta or courier."
+      },
+      {
+        "q": "What if the plant doesn't settle in?",
+        "a": "14-day replacement (mock policy for this demo site)."
+      }
+    ],
+    "errors": {
+      "required": "Required field",
+      "email": "Enter a valid email",
+      "phone": "Enter a valid phone (min. 10 digits)"
+    }
+  },
+  "cookie": {
+    "text": "We use cookies for analytics (mock). By continuing you agree.",
+    "accept": "Accept"
+  },
+  "footer": {
+    "copy": "© 2026 Root & Leaf. All rights reserved.",
+    "made": "Static portfolio site"
+  },
+  "theme": {
+    "toLight": "Light theme",
+    "toDark": "Dark theme"
+  },
+  "pagination": {
+    "prev": "Previous",
+    "next": "Next"
+  }
+}

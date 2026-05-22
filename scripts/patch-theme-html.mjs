@@ -1,0 +1,37 @@
+import { readFileSync, writeFileSync } from 'fs';
+
+const files = [
+  'catalog.html',
+  'journal.html',
+  'about.html',
+  'contact.html',
+  'plant.html',
+  'checkout.html',
+];
+
+const btn = `          <button type="button" class="icon-btn theme-toggle" data-theme-toggle data-label-light="Світла тема" data-label-dark="Темна тема" aria-label="Світла тема" title="Світла тема" aria-pressed="false">
+            <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="17" cy="6" r="2.5" fill="currentColor" opacity="0.85"/><path d="M12 9c-2.8 0-5 2-5 4.5S9.2 18 12 18s5-2 5-4.5S14.8 9 12 9z" fill="currentColor"/><path d="M12 5.5C10 8.5 7.5 9.5 6 11a6 6 0 0 0 12 0c-1.5-1.5-4-2.5-6-5.5z" fill="var(--accent-2)"/><path d="M7 20h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8.5 20v-2.5c0-1 .8-1.8 3.5-1.8s3.5.8 3.5 1.8V20" stroke="currentColor" stroke-width="1.2" fill="rgba(180,140,100,0.25)"/></svg></span>
+            <span class="theme-toggle__icon theme-toggle__icon--shade" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M14.5 5.5a5.5 5.5 0 1 0 4 9.8A4.5 4.5 0 0 1 14.5 5.5z" fill="currentColor" opacity="0.35"/><path d="M12 9.5c-2.5 0-4.5 1.8-4.5 4s2 4 4.5 4 4.5-1.8 4.5-4-2-4.5-4z" fill="currentColor"/><path d="M12 6C10.2 8.8 8 9.8 6.5 11.2a5.5 5.5 0 0 0 11 0C16 9.8 13.8 8.8 12 6z" fill="var(--accent-deep)"/><path d="M7 20h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8.5 20v-2.2c0-.9.8-1.6 3.5-1.6s3.5.7 3.5 1.6V20" stroke="currentColor" stroke-width="1.2" fill="rgba(90,70,50,0.35)"/></svg></span>
+          </button>
+`;
+
+for (const file of files) {
+  let html = readFileSync(file, 'utf8');
+  html = html.replace('<html lang="uk">', '<html lang="uk" data-theme="dark">');
+  if (!html.includes('data-theme-toggle')) {
+    if (file === 'checkout.html') {
+      html = html.replace(
+        '<button type="button" class="icon-btn icon-btn--cart" data-cart-open',
+        `${btn}        <button type="button" class="icon-btn icon-btn--cart" data-cart-open`,
+      );
+    } else {
+      html = html.replace(/<div class="header-actions">\s*\n\s*<div class="lang-switch"/, `<div class="header-actions">\n${btn}        <div class="lang-switch"`);
+      html = html.replace(
+        /<div class="header-actions">\s*\n\s*<div class="lang-switch"><button/,
+        `<div class="header-actions">\n${btn}        <div class="lang-switch"><button`,
+      );
+    }
+  }
+  writeFileSync(file, html);
+  console.log('patched', file);
+}

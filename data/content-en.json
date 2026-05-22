@@ -1,0 +1,353 @@
+{
+  "plants": {
+    "monstera": {
+      "name": "Monstera deliciosa",
+      "tags": [
+        "tropical",
+        "decor",
+        "air purifying"
+      ],
+      "shortDescription": "Iconic split tropical foliage — a living room focal point.",
+      "description": "Monstera deliciosa is one of the most popular houseplants for city apartments. Large perforated leaves bring a jungle feel without fussy care.\n\nIt adapts well to bright indirect light and moderate humidity. With age it forms a sturdy stem you can stake.\n\nRoot & Leaf ships it in a ceramic pot with drainage and a short repotting guide.",
+      "watering": "Every 7–10 days when the top soil is dry",
+      "humidity": "50–70%, mist in winter",
+      "origin": "Colombia",
+      "highlights": [
+        "Perforated leaves",
+        "Ceramic pot",
+        "PDF guide"
+      ]
+    },
+    "pothos": {
+      "name": "Golden pothos",
+      "tags": [
+        "trailing",
+        "beginner",
+        "shade tolerant"
+      ],
+      "shortDescription": "Forgiving trailer — survives corners with no direct sun.",
+      "description": "Golden pothos is a classic for beginners. Tolerates irregular watering and low light.\n\nGrow in a hanging planter or on a shelf — stems trail beautifully. Variegated leaves brighten the room.\n\nGreat for studios, bedrooms, or north-facing offices.",
+      "watering": "Every 10–14 days, avoid overwatering",
+      "humidity": "40–60%, not critical",
+      "origin": "French Polynesia",
+      "highlights": [
+        "Trailing",
+        "NASA clean air",
+        "Easy watering"
+      ]
+    },
+    "sansevieria": {
+      "name": "Snake plant 'Laurentii'",
+      "tags": [
+        "minimal",
+        "bedroom",
+        "night oxygen"
+      ],
+      "shortDescription": "Striped upright leaves — minimal water, maximum style.",
+      "description": "Snake plant is the champion of resilience. Handles rare watering, dry air, and low light.\n\nVertical leaves save space — perfect by the bed or in a narrow hall. Releases oxygen at night.\n\nIdeal for busy city dwellers who travel often.",
+      "watering": "Every 2–3 weeks, less in winter",
+      "humidity": "30–50%, no misting needed",
+      "origin": "West Africa",
+      "highlights": [
+        "Vertical accent",
+        "Night O₂",
+        "For bedroom"
+      ]
+    },
+    "ficus-lyrata": {
+      "name": "Fiddle-leaf fig",
+      "tags": [
+        "premium",
+        "living room",
+        "large leaf"
+      ],
+      "shortDescription": "Violin-shaped glossy leaves — a status plant for bright rooms.",
+      "description": "Fiddle-leaf fig is an interior designer favorite. Large glossy leaves create drama in a window corner.\n\nNeeds stable bright indirect light and careful watering. Dislikes being moved — pick a spot once.\n\nIncludes a guide to prevent lower leaf drop.",
+      "watering": "Weekly when soil is half dry",
+      "humidity": "50–65%, pebble tray",
+      "origin": "West Africa",
+      "highlights": [
+        "Premium line",
+        "48h delivery",
+        "14-day guarantee"
+      ]
+    },
+    "zz-plant": {
+      "name": "ZZ plant",
+      "tags": [
+        "office",
+        "shade",
+        "glossy"
+      ],
+      "shortDescription": "Glossy dark green leaves — nearly indestructible for offices.",
+      "description": "ZZ plant stores water in rhizomes, so forgotten watering is fine. Looks expensive year-round.\n\nGrows under fluorescent light and in room corners. Slow but steady growth.\n\nRecommended for open offices and home desks without south windows.",
+      "watering": "Every 3–4 weeks",
+      "humidity": "40–55%",
+      "origin": "East Africa",
+      "highlights": [
+        "Glossy foliage",
+        "For office",
+        "Rare watering"
+      ]
+    },
+    "peace-lily": {
+      "name": "Peace lily",
+      "tags": [
+        "flowering",
+        "purifying",
+        "bathroom"
+      ],
+      "shortDescription": "White spathes and glossy leaves — wilts when thirsty.",
+      "description": "Peace lily is one of few bloomers for partial shade. White spathes appear several times a year.\n\nGreat at removing formaldehyde. If you forget to water, leaves droop but revive within an hour.\n\nPerfect for a humid bathroom.",
+      "watering": "Every 5–7 days, avoid drying out",
+      "humidity": "55–75%",
+      "origin": "Colombia",
+      "highlights": [
+        "White spathes",
+        "Thirst signal",
+        "For bathroom"
+      ]
+    },
+    "rubber-plant": {
+      "name": "Rubber plant",
+      "tags": [
+        "tree",
+        "living room",
+        "dark leaves"
+      ],
+      "shortDescription": "Deep burgundy or green gloss — a vertical room accent.",
+      "description": "Rubber tree forms a strong trunk and wide crown. Varieties like Abidjan and Tineke offer different leaf tones.\n\nNeeds a bright spot without harsh midday sun. Wipe leaves monthly with a damp cloth.\n\nBest for rooms with ceilings from 2.5 m.",
+      "watering": "Every 8–10 days",
+      "humidity": "45–60%",
+      "origin": "South Asia",
+      "highlights": [
+        "Tree form",
+        "Stake included",
+        "Air filter"
+      ]
+    },
+    "aloe-vera": {
+      "name": "Aloe vera",
+      "tags": [
+        "succulent",
+        "kitchen",
+        "medicinal"
+      ],
+      "shortDescription": "Windowsill succulent — rare water, gel inside leaves.",
+      "description": "Aloe loves a sunny windowsill. Stores water in fleshy leaves — overwatering hurts more than neglect.\n\nCompact for a dresser, kitchen shelf, or home remedy corner.\n\nShipped in a drainage pot with sandy succulent mix.",
+      "watering": "Every 2–3 weeks, monthly in winter",
+      "humidity": "30–45%",
+      "origin": "Arabian Peninsula",
+      "highlights": [
+        "Succulent",
+        "For windowsill",
+        "100% drainage"
+      ]
+    },
+    "spider-plant": {
+      "name": "Spider plant",
+      "tags": [
+        "pet safe",
+        "kids room",
+        "trailing"
+      ],
+      "shortDescription": "Striped leaves and “spiderettes” — safe for families with kids.",
+      "description": "Spider plant quickly produces baby rosettes on long stolons — easy to propagate.\n\nOne of the best natural air filters at home. Non-toxic for cats and dogs.\n\nLooks great in a hanging planter above a desk.",
+      "watering": "Weekly, likes even moisture",
+      "humidity": "45–60%",
+      "origin": "Southern Africa",
+      "highlights": [
+        "Pet-friendly",
+        "Baby rosettes",
+        "Hanging planter"
+      ]
+    },
+    "philodendron": {
+      "name": "Heartleaf philodendron",
+      "tags": [
+        "tropical",
+        "vine",
+        "shelf"
+      ],
+      "shortDescription": "Heart-shaped leaves — fast growth and soft tropical vibe.",
+      "description": "Heartleaf philodendron is a monstera cousin but more compact. Heart leaves on long stems.\n\nTolerates indirect light and moderate humidity. Train on a rope or shelf.\n\nA boho shelf essential from Brazil.",
+      "watering": "Every 7–10 days",
+      "humidity": "50–65%",
+      "origin": "Brazil",
+      "highlights": [
+        "Fast growth",
+        "Boho style",
+        "Soft tropics"
+      ]
+    },
+    "calathea": {
+      "name": "Calathea orbifolia",
+      "tags": [
+        "pattern",
+        "humidity",
+        "bedroom"
+      ],
+      "shortDescription": "Round silvery leaves — humidity-hungry but worth it.",
+      "description": "Orbifolia is the texture queen. Wide round leaves with silver stripes move at night.\n\nNeeds filtered water and steady 60%+ humidity. No drafts or direct sun.\n\nFor those ready to use a humidifier — stunning reward.",
+      "watering": "Every 5–6 days, soft water only",
+      "humidity": "65–80%, humidifier recommended",
+      "origin": "Bolivia",
+      "highlights": [
+        "Silver pattern",
+        "Humidity guide",
+        "Premium mix"
+      ]
+    },
+    "begonia-maculata": {
+      "name": "Polka dot begonia",
+      "tags": [
+        "pattern",
+        "premium",
+        "windowsill"
+      ],
+      "shortDescription": "Spotted leaves and red undersides — an Instagram star.",
+      "description": "Begonia maculata has angel-wing leaves with white dots on green. Red leaf undersides are signature.\n\nLoves bright indirect light and even watering without standing water. Sensitive to dry winter air.\n\nPlace on an east window for a year-round show.",
+      "watering": "Every 5–7 days, do not overwater",
+      "humidity": "55–70%",
+      "origin": "Brazil",
+      "highlights": [
+        "Spotted leaves",
+        "Instagram hit",
+        "East window"
+      ]
+    }
+  },
+  "articles": {
+    "watering-guide": {
+      "title": "How to water houseplants in winter",
+      "excerpt": "Five simple rules so roots do not die from cold and overwatering.",
+      "tag": "care",
+      "body": [
+        "<p>Winter watering is the top killer of plants in Kyiv and Lviv apartments. Shorter days slow photosynthesis while soil dries slower.</p>",
+        "<p>Check soil 2–3 cm deep with your finger. Dry — water with settled room-temperature water. Moist — wait 3–4 more days.</p>",
+        "<p>Do not water by calendar alone — water by plant condition. Snake plants and succulents may need water once a month in winter.</p>",
+        "<p>Empty the saucer after 20 minutes. Standing water at the roots leads to rot.</p>"
+      ]
+    },
+    "low-light-plants": {
+      "title": "7 plants for rooms without sun",
+      "excerpt": "A north window is not a sentence. Picks for studios and hallways.",
+      "tag": "selection",
+      "body": [
+        "<p>Low light does not mean no plants. Pothos, snake plant, peace lily, and ZZ are basics for dark corners.</p>",
+        "<p>Use labels: low — up to 2 h indirect sun, medium — bright indirect day, bright — east or west window.</p>",
+        "<p>Avoid total darkness without a lamp. Even 8 h of 4000K LED daily can save a fiddle leaf or monstera.</p>"
+      ]
+    },
+    "repotting-spring": {
+      "title": "Spring repotting: step-by-step",
+      "excerpt": "When, which pot, and which mix to choose for tropics.",
+      "tag": "care",
+      "body": [
+        "<p>Best repotting time is March–May when the plant wakes up. Avoid repotting a blooming begonia at peak flower.</p>",
+        "<p>New pot — 2–3 cm wider than the old one. Too much soil holds water and causes rot.</p>",
+        "<p>For monstera and philodendron — peat, perlite, bark 2:1:1. Succulents need a sandy mix.</p>",
+        "<p>No fertilizer for 4 weeks after repotting — let roots settle.</p>"
+      ]
+    },
+    "humidity-tips": {
+      "title": "Humidity without an expensive humidifier",
+      "excerpt": "Pebble trays, plant grouping, and misting — what works.",
+      "tag": "care",
+      "body": [
+        "<p>Radiators can dry air to 25% in winter. Calatheas and ficuses get crispy leaf edges.</p>",
+        "<p>Group plants — microclimate stays moister. A wet pebble tray under the pot is classic.</p>",
+        "<p>Mist in the morning, not evening. Water on leaves at night risks fungus.</p>"
+      ]
+    },
+    "pet-safe-plants": {
+      "title": "Pet-safe plants for cat owners",
+      "excerpt": "What will not harm your pet if they chew leaves.",
+      "tag": "selection",
+      "body": [
+        "<p>Monstera and ficus are toxic to cats. Better — spider plant, peace lily (check ASPCA for your pet).</p>",
+        "<p>Keep pots on shelves or hanging planters. Mustard on the rim is a safe paw deterrent.</p>",
+        "<p>At Root & Leaf we tag “pet safe” on cards where it applies.</p>"
+      ]
+    },
+    "first-plant-kit": {
+      "title": "Starter kit: 3 plants for beginners",
+      "excerpt": "Pothos, snake plant, and aloe — minimum stress, maximum green.",
+      "tag": "selection",
+      "body": [
+        "<p>Do not buy 15 pots at once. Start with three types: trailing, upright, succulent.</p>",
+        "<p>Pothos teaches “water when it wilts”. Snake plant teaches patience. Aloe teaches sunny windowsills.</p>",
+        "<p>After 3 months add a monstera or peace lily when you feel the rhythm.</p>",
+        "<p>Clients in Odesa often pick this set for housewarming — 10% off the bundle in catalog promos.</p>"
+      ]
+    }
+  },
+  "reviews": [
+    {
+      "text": "Monstera arrived perfect with a Ukrainian care guide. Third month — a new leaf with splits!",
+      "city": "Kyiv"
+    },
+    {
+      "text": "Ordered snake plant for the office — water every three weeks, looks magazine-ready. Next-day delivery.",
+      "city": "Lviv"
+    },
+    {
+      "text": "Pothos in a hanging planter — the only survivor in my dark bedroom. Support replied in 10 minutes.",
+      "city": "Odesa"
+    },
+    {
+      "text": "I overwatered calathea at first, but support suggested a humidifier — it bounced back. Thanks for patience!",
+      "city": "Kyiv"
+    },
+    {
+      "text": "Large fiddle leaf, packed safely. Standing in the living room corner — guests ask where I bought it.",
+      "city": "Lviv"
+    },
+    {
+      "text": "Spider plant for the kids room — safe and easy. My daughter waters it weekly herself.",
+      "city": "Odesa"
+    },
+    {
+      "text": "ZZ in a windowless office — alive a year. Fair prices, no fake “premium” markup.",
+      "city": "Kyiv"
+    },
+    {
+      "text": "Read the winter watering journal — saved my whole balcony. Site is pleasant, not cluttered.",
+      "city": "Lviv"
+    }
+  ],
+  "gallery": [
+    {
+      "alt": "Monstera in interior",
+      "caption": "Monstera · living room"
+    },
+    {
+      "alt": "Hanging pothos",
+      "caption": "Pothos · trailing"
+    },
+    {
+      "alt": "Fiddle leaf by window",
+      "caption": "Ficus · light"
+    },
+    {
+      "alt": "Succulents on windowsill",
+      "caption": "Succulents · aloe"
+    },
+    {
+      "alt": "Peace lily in bloom",
+      "caption": "Peace lily · flowers"
+    },
+    {
+      "alt": "ZZ plant in office",
+      "caption": "ZZ · office"
+    },
+    {
+      "alt": "Spider plant in hanger",
+      "caption": "Spider plant · pet-friendly"
+    },
+    {
+      "alt": "Polka dot begonia leaves",
+      "caption": "Begonia · pattern"
+    }
+  ]
+}

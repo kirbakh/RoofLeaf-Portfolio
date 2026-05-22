@@ -1,0 +1,165 @@
+/* —— Light botanical theme —— */
+
+[data-theme="light"] * {
+  scrollbar-color: rgba(45, 143, 92, 0.5) var(--scrollbar-track-a);
+}
+
+[data-theme="light"] {
+  --bg-deep: #f0f7f3;
+  --bg: #e8f2ec;
+  --bg-elevated: #ffffff;
+  --glass: rgba(255, 255, 255, 0.72);
+  --glass-strong: rgba(255, 255, 255, 0.92);
+  --glass-border: rgba(42, 107, 74, 0.14);
+  --text: #152820;
+  --text-muted: #5a7568;
+  --neon: #2d8f5c;
+  --neon-cyan: #4aad78;
+  --neon-dim: rgba(45, 143, 92, 0.14);
+  --accent: #2d8f5c;
+  --accent-2: #5bb888;
+  --accent-deep: #1f6b45;
+  --warm: #b8885a;
+  --shadow-glow: 0 0 36px rgba(45, 143, 92, 0.18);
+  --shadow-card: 0 18px 42px rgba(26, 60, 45, 0.1);
+
+  --header-morph-bg: rgba(255, 255, 255, 0.9);
+  --nav-overlay-bg: rgba(240, 247, 243, 0.96);
+  --scrollbar-track-a: rgba(232, 242, 236, 0.95);
+  --scrollbar-track-b: rgba(220, 235, 226, 0.9);
+  --scrollbar-thumb-border: rgba(240, 247, 243, 0.85);
+  --loader-bg-top: #dcebe2;
+  --loader-bg-mid: #e8f2ec;
+  --loader-bg-deep: #f0f7f3;
+  --loader-bg-bottom: #e2ede6;
+  --pot-preview-bg: linear-gradient(180deg, #dce8e0 0%, #e8f2ec 55%, #f0f7f3 100%);
+  --floating-leaf-opacity: 0.35;
+}
+
+[data-theme="dark"] {
+  --header-morph-bg: rgba(26, 34, 30, 0.88);
+  --nav-overlay-bg: rgba(3, 3, 6, 0.92);
+  --scrollbar-track-a: rgba(18, 25, 22, 0.5);
+  --scrollbar-track-b: rgba(26, 34, 30, 0.85);
+  --scrollbar-thumb-border: rgba(18, 25, 22, 0.5);
+  --loader-bg-top: #2a3830;
+  --loader-bg-mid: #121916;
+  --loader-bg-deep: #121916;
+  --loader-bg-bottom: #0a0d0b;
+  --pot-preview-bg: linear-gradient(180deg, #2e3a32 0%, #1a221e 55%, #141a16 100%);
+  --floating-leaf-opacity: 0.5;
+}
+
+/* Theme toggle — plant in sun / shade */
+.theme-toggle {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.theme-toggle__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.theme-toggle__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+[data-theme="dark"] .theme-toggle__icon--shade {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle__icon--sun {
+  display: none;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+}
+
+[data-theme="light"] .ambient-orb--1 {
+  background: radial-gradient(circle, rgba(91, 184, 136, 0.28), transparent 70%);
+  opacity: 0.65;
+}
+
+[data-theme="light"] .ambient-orb--2 {
+  background: radial-gradient(circle, rgba(212, 184, 150, 0.22), transparent 70%);
+  opacity: 0.55;
+}
+
+[data-theme="light"] .floating-leaf {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32'%3E%3Cpath d='M12 2C7 10 5 18 12 30 19 18 17 10 12 2Z' fill='%232d8f5c' fill-opacity='0.28'/%3E%3C/svg%3E");
+  opacity: var(--floating-leaf-opacity, 0.35);
+}
+
+[data-theme="light"] .logo svg {
+  filter: drop-shadow(0 2px 8px rgba(45, 143, 92, 0.25));
+}
+
+[data-theme="light"] .lang-switch button.is-active {
+  color: #fff;
+}
+
+[data-theme="light"] .nav-desktop a:hover,
+[data-theme="light"] .nav-desktop a.is-active {
+  box-shadow: inset 0 0 0 1px rgba(45, 143, 92, 0.22);
+}
+
+[data-theme="light"] .glass-card,
+[data-theme="light"] .plant-card {
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme="light"] .hero-title-accent,
+[data-theme="light"] .text-gradient {
+  background: linear-gradient(135deg, var(--accent-deep), var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+[data-theme="light"] .page-loader {
+  background: radial-gradient(
+    ellipse at 50% 55%,
+    var(--loader-bg-top) 0%,
+    var(--loader-bg-mid) 52%,
+    var(--loader-bg-bottom) 100%
+  );
+}
+
+[data-theme="light"] .cursor-glow {
+  background: radial-gradient(circle, rgba(45, 143, 92, 0.35), transparent 70%);
+}
+
+[data-theme="light"] .cursor-leaf {
+  filter: drop-shadow(0 0 6px rgba(45, 143, 92, 0.45));
+}
+
+[data-theme="light"] .spotlight-glow {
+  background: radial-gradient(
+    circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(91, 184, 136, 0.35),
+    transparent 55%
+  );
+}
+
+html[data-theme="light"],
+html[data-theme="light"] body {
+  transition: background-color 0.4s var(--ease-out), color 0.4s var(--ease-out);
+}
+
+[data-theme="light"] .back-to-top {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+[data-theme="light"] .plant-preview__frame-inner {
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 20%, rgba(91, 184, 136, 0.2), transparent 55%),
+    linear-gradient(180deg, #dcebe2 0%, #e8f2ec 45%, #f0f7f3 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -12px 24px rgba(26, 60, 45, 0.06),
+    0 12px 32px rgba(26, 60, 45, 0.1);
+}

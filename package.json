@@ -1,0 +1,9 @@
+{
+  "name": "root-and-leaf-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/",
+    "build:content-en": "node scripts/build-content-en.mjs"
+  }
+}

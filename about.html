@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <script src="js/theme-boot.js"></script>
+  <meta name="theme-color" content="#121916">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <title>Про нас — Root & Leaf</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/features.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script type="module" src="js/effects.js"></script>
+</head>
+<body data-page="about" class="theme-premium">
+  <header class="site-header">
+    <div class="header-shell">
+      <div class="container header-inner">
+        <a href="index.html" class="logo"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="rgba(0,255,157,0.12)"/><path d="M18 8c-4 8-10 10-10 16a10 10 0 0 0 20 0c0-6-6-8-10-16z" fill="#00ff9d"/></svg><span data-i18n="brand">Root & Leaf</span></a>
+        <nav class="nav-desktop">
+          <a href="index.html" data-i18n="nav.home">Головна</a>
+          <a href="catalog.html" data-i18n="nav.catalog">Каталог</a>
+          <a href="journal.html" data-i18n="nav.journal">Журнал</a>
+          <a href="about.html" data-i18n="nav.about">Про нас</a>
+          <a href="contact.html" data-i18n="nav.contact">Контакти</a>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="icon-btn theme-toggle" data-theme-toggle data-label-light="Світла тема" data-label-dark="Темна тема" aria-label="Світла тема" title="Світла тема" aria-pressed="false">
+            <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="17" cy="6" r="2.5" fill="currentColor" opacity="0.85"/><path d="M12 9c-2.8 0-5 2-5 4.5S9.2 18 12 18s5-2 5-4.5S14.8 9 12 9z" fill="currentColor"/><path d="M12 5.5C10 8.5 7.5 9.5 6 11a6 6 0 0 0 12 0c-1.5-1.5-4-2.5-6-5.5z" fill="var(--accent-2)"/><path d="M7 20h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8.5 20v-2.5c0-1 .8-1.8 3.5-1.8s3.5.8 3.5 1.8V20" stroke="currentColor" stroke-width="1.2" fill="rgba(180,140,100,0.25)"/></svg></span>
+            <span class="theme-toggle__icon theme-toggle__icon--shade" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M14.5 5.5a5.5 5.5 0 1 0 4 9.8A4.5 4.5 0 0 1 14.5 5.5z" fill="currentColor" opacity="0.35"/><path d="M12 9.5c-2.5 0-4.5 1.8-4.5 4s2 4 4.5 4 4.5-1.8 4.5-4-2-4.5-4z" fill="currentColor"/><path d="M12 6C10.2 8.8 8 9.8 6.5 11.2a5.5 5.5 0 0 0 11 0C16 9.8 13.8 8.8 12 6z" fill="var(--accent-deep)"/><path d="M7 20h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8.5 20v-2.2c0-.9.8-1.6 3.5-1.6s3.5.7 3.5 1.6V20" stroke="currentColor" stroke-width="1.2" fill="rgba(90,70,50,0.35)"/></svg></span>
+          </button>
+        <div class="lang-switch"><button type="button" data-lang-btn="ua" class="is-active">UA</button><button type="button" data-lang-btn="en">EN</button></div>
+          <button type="button" class="icon-btn icon-btn--cart" data-cart-open aria-label="Кошик">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+            <span class="cart-badge" data-cart-count>0</span>
+          </button>
+          <button type="button" class="icon-btn menu-toggle" aria-label="Меню"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <nav class="nav-mobile" data-i18n-aria="a11y.mobileNav"><a href="index.html" data-i18n="nav.home">Головна</a><a href="catalog.html" data-i18n="nav.catalog">Каталог</a><a href="journal.html" data-i18n="nav.journal">Журнал</a><a href="about.html" data-i18n="nav.about">Про нас</a><a href="contact.html" data-i18n="nav.contact">Контакти</a></nav>
+  </header>
+
+  <main id="main">
+    <section class="about-hero container">
+      <span class="section-eyebrow reveal" data-i18n="about.eyebrowEst">Est. 2022 · Kyiv</span>
+      <h1 class="text-reveal" data-i18n="about.title">Про Root & Leaf</h1>
+      <p class="reveal" data-i18n="about.intro">Ми — київська команда ентузіастів біофільного дизайну. Допомагаємо містянам облаштувати зелені кутки без страху «все загине».</p>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="hero-visual reveal" style="max-width:900px;margin:0 auto 3rem;border-radius:24px;overflow:hidden">
+          <img src="assets/images/site/greenhouse.jpg" data-i18n-alt="about.greenhouseAlt" alt="Теплиця Root & Leaf з тропічними рослинами" loading="lazy" decoding="async" data-parallax="0.06" style="width:100%;aspect-ratio:21/9;object-fit:cover" onerror="this.onerror=null;this.src='assets/images/placeholder.svg'">
+        </div>
+        <span class="section-eyebrow reveal" data-i18n="about.eyebrowMission">Mission</span>
+        <h2 class="reveal" data-i18n="sections.mission">Місія</h2>
+        <p class="reveal glass-card" style="padding:2rem;max-width:720px;font-size:1.15rem;color:var(--text)" data-i18n="about.missionText">Зробити догляд за рослинами таким же природним, як прибирання кухні.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="section-eyebrow reveal" data-i18n="about.eyebrowStats">Numbers</span>
+        <h2 class="reveal" data-i18n="sections.stats">Цифри</h2>
+        <div class="stats-grid stagger-grid" id="stats-grid">
+          <div class="stat-card glass-card">
+            <div class="stat-card__value" data-count="12000" data-suffix="+">0</div>
+            <div>горщиків доставлено</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-card__value" data-count="4.8" data-decimals="1">0</div>
+            <div>середній рейтинг</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-card__value" data-count="48">0</div>
+            <div>міст України</div>
+          </div>
+          <div class="stat-card glass-card">
+            <div class="stat-card__value" data-count="6">0</div>
+            <div>років досвіду</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="section-eyebrow reveal" data-i18n="about.eyebrowTeam">Team</span>
+        <h2 class="reveal" data-i18n="sections.team">Команда</h2>
+        <div class="team-grid stagger-grid" id="team-grid"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container cta-block glass-card reveal">
+        <h2 data-i18n="about.ctaTitle">Питання?</h2>
+        <a href="contact.html" class="btn btn-primary magnetic" data-i18n="nav.contact">Контакти</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-bottom"><span data-i18n="footer.copy">© 2026 Root & Leaf</span></div></footer>
+  <div class="cookie-banner"><p data-i18n="cookie.text">Cookies</p><button type="button" class="btn btn-primary magnetic" data-cookie-accept data-i18n="cookie.accept">Прийняти</button></div>
+  <script type="module" src="js/main.js"></script>
+  <script type="module">
+    import { t } from './js/i18n.js';
+
+    const teamPhotos = [
+      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80',
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80',
+      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80',
+      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80',
+    ];
+
+    function renderTeam() {
+      const locale = t();
+      const grid = document.getElementById('team-grid');
+      if (!locale?.about?.team || !grid) return;
+      grid.innerHTML = locale.about.team.map((m, i) => `
+        <div class="team-card glass-card reveal">
+          <img class="team-card__avatar team-card__photo" src="${teamPhotos[i]}" alt="${m.name}" width="88" height="88" loading="lazy">
+          <h3>${m.name}</h3>
+          <p>${m.role}</p>
+          <p style="font-size:0.85rem">${m.bio}</p>
+        </div>
+      `).join('');
+      window.reinitEffects?.(grid);
+    }
+
+    function renderStats() {
+      const locale = t();
+      const grid = document.getElementById('stats-grid');
+      if (!locale?.about?.stats || !grid) return;
+      const items = locale.about.stats;
+      const counts = [12000, 4.8, 48, 6];
+      grid.innerHTML = items.map((s, i) => `
+        <div class="stat-card glass-card reveal">
+          <div class="stat-card__value" data-count="${counts[i]}" data-suffix="${s.value.includes('+') ? '+' : ''}" data-decimals="${String(counts[i]).includes('.') ? 1 : 0}">0</div>
+          <div>${s.label}</div>
+        </div>
+      `).join('');
+      window.reinitEffects?.();
+    }
+    window.addEventListener('rl:localechange', () => { renderStats(); renderTeam(); });
+    window.addEventListener('rl:ready', () => { renderStats(); renderTeam(); });
+  </script>
+</body>
+</html>
