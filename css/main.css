@@ -711,7 +711,7 @@ body.is-loaded .hero .text-reveal.is-visible .text-reveal-inner {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 500;
+  z-index: 520;
   padding: 1rem clamp(1rem, 4vw, 2rem);
   transition: padding 0.5s var(--ease-out);
 }
@@ -829,30 +829,62 @@ body.is-loaded .hero .text-reveal.is-visible .text-reveal-inner {
 .menu-toggle { display: flex; }
 
 .nav-mobile {
-  display: none;
+  display: flex;
   position: fixed;
   inset: 0;
-  z-index: 400;
-  background: var(--nav-overlay-bg, rgba(3, 3, 6, 0.92));
-  backdrop-filter: blur(24px);
+  z-index: 480;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background: transparent;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.38s var(--ease-out), visibility 0.38s;
 }
 
-.nav-mobile.is-open { display: flex; }
+.nav-mobile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 12, 10, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.38s var(--ease-out);
+}
+
+.nav-mobile.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav-mobile.is-open::before {
+  opacity: 1;
+}
 
 .nav-mobile a {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--text);
+  text-decoration: none;
 }
 
 @media (min-width: 900px) {
   .nav-desktop { display: flex; }
   .menu-toggle { display: none; }
+  .nav-mobile {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
 }
 
 @media (min-width: 900px) and (max-width: 1080px) {

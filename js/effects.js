@@ -8,12 +8,30 @@ import {
   routeTransitionInnerHtml,
   routeLoaderInnerHtml,
 } from './loader-ui.js';
-import { PAGE_TRANSITION_MS } from './nav-timing.js';
+import {
+  PAGE_TRANSITION_MS,
+  MOBILE_PAGE_TRANSITION_MS,
+  INTRO_LOADER_DESKTOP,
+  INTRO_LOADER_MOBILE,
+  ROUTE_LOADER_MIN_MS,
+} from './nav-timing.js';
 
 export { PAGE_TRANSITION_MS };
 const prefersReduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isTouch = () => window.matchMedia('(hover: none)').matches;
 const isMobile = () => window.matchMedia('(max-width: 767px)').matches;
+
+function pageTransitionMs() {
+  return isMobile() ? MOBILE_PAGE_TRANSITION_MS : PAGE_TRANSITION_MS;
+}
+
+function introLoaderTiming() {
+  return isMobile() ? INTRO_LOADER_MOBILE : INTRO_LOADER_DESKTOP;
+}
+
+function routeLoaderMinMs() {
+  return isMobile() ? ROUTE_LOADER_MIN_MS.mobile : ROUTE_LOADER_MIN_MS.desktop;
+}
 
 function initDeviceClasses() {
   document.body.classList.toggle('is-touch', isTouch());
@@ -214,7 +232,7 @@ function skipIntroLoader(loader) {
 
 function initRouteLoader() {
   const route = document.getElementById('route-loader');
-  if (!route || prefersReduced() || isMobile()) {
+  if (!route || prefersReduced()) {
     document.body.classList.add('is-loaded');
     route?.classList.remove('is-active');
     route?.removeAttribute('aria-busy');
@@ -242,7 +260,7 @@ function initRouteLoader() {
     revealNow();
   };
 
-  const minMs = 420;
+  const minMs = routeLoaderMinMs();
   const start = performance.now();
   const finish = () => {
     const left = Math.max(0, minMs - (performance.now() - start));
@@ -278,28 +296,21 @@ function initLoader() {
     introDone = false;
   }
 
-  if (introDone || isMobile()) {
+  if (introDone) {
     skipIntroLoader(loader);
-    if (isMobile()) {
-      try {
-        sessionStorage.setItem(INTRO_LOADER_KEY, '1');
-      } catch {
-        /* ignore */
-      }
-    }
     initRouteLoader();
     return;
   }
 
+  const timing = introLoaderTiming();
   document.body.classList.remove('is-loaded');
   loader.classList.add('is-animating');
-  setTimeout(() => {
-    loader.classList.add('is-bloom');
-  }, 2400);
+  if (isMobile()) loader.classList.add('is-mobile-fast');
+  setTimeout(() => loader.classList.add('is-bloom'), timing.bloom);
   setTimeout(() => {
     loader.classList.add('is-complete');
-    setTimeout(() => finishLoader(loader), 800);
-  }, 3800);
+    setTimeout(() => finishLoader(loader), timing.finishDelay);
+  }, timing.complete);
 }
 
 function initScrollUX() {
@@ -555,7 +566,7 @@ function showNavLoader(overlay) {
 /** Перехід на сторінку товару: короткий лоадер → сторінка */
 export function navigateWithTransition(href) {
   if (!href) return;
-  const reduced = prefersReduced() || isMobile();
+  const reduced = prefersReduced();
 
   let targetUrl;
   try {
@@ -580,7 +591,7 @@ export function navigateWithTransition(href) {
       showNavLoader(overlay);
       setTimeout(() => {
         location.assign(targetUrl.href);
-      }, PAGE_TRANSITION_MS);
+      }, pageTransitionMs());
     } else {
       location.assign(targetUrl.href);
     }
@@ -590,7 +601,7 @@ export function navigateWithTransition(href) {
 }
 
 function initPageTransition() {
-  if (prefersReduced() || isMobile()) return;
+  if (prefersReduced()) return;
   const overlay = document.getElementById('page-transition');
   if (!overlay) return;
 
@@ -606,7 +617,7 @@ function initPageTransition() {
       showNavLoader(overlay);
       setTimeout(() => {
         location.href = href;
-      }, PAGE_TRANSITION_MS);
+      }, pageTransitionMs());
     });
   });
 }

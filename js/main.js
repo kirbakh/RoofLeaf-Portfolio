@@ -19,6 +19,8 @@ function initHeader() {
   const closeNav = () => {
     mobileNav?.classList.remove('is-open');
     document.body.classList.remove('nav-open');
+    header?.classList.remove('nav-is-open');
+    toggle?.classList.remove('is-open');
     toggle?.setAttribute('aria-expanded', 'false');
     main?.removeAttribute('aria-hidden');
   };
@@ -28,9 +30,15 @@ function initHeader() {
       const open = !mobileNav.classList.contains('is-open');
       mobileNav.classList.toggle('is-open', open);
       document.body.classList.toggle('nav-open', open);
+      header?.classList.toggle('nav-is-open', open);
+      toggle.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', String(open));
       if (open) main?.setAttribute('aria-hidden', 'true');
       else main?.removeAttribute('aria-hidden');
+    });
+
+    mobileNav.addEventListener('click', (e) => {
+      if (e.target === mobileNav) closeNav();
     });
 
     mobileNav.querySelectorAll('a').forEach((link) => {
