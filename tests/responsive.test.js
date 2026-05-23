@@ -20,6 +20,13 @@ test('responsive.css covers mobile layout', () => {
   assert.doesNotMatch(responsiveCss, /content-visibility:\s*auto/);
 });
 
+test('main.css only hides cursor when custom cursor is active', () => {
+  const mainCss = readFileSync(join(root, 'css', 'main.css'), 'utf8');
+  assert.match(mainCss, /\.has-custom-cursor/);
+  assert.match(mainCss, /force-visible/);
+  assert.doesNotMatch(mainCss, /body\s*\{[^}]*cursor:\s*none/s);
+});
+
 test('effects.js keeps loaders and transitions on mobile with shorter timing', () => {
   assert.match(effectsJs, /INTRO_LOADER_MOBILE/);
   assert.match(effectsJs, /is-mobile-fast/);

@@ -58,7 +58,19 @@ export function localizeGalleryItem(item, index, lang = getLang(), enList = cont
 /** @param {string} tag @param {object} locale */
 export function tagLabel(tag, locale) {
   if (!tag || tag === 'all') return locale?.tags?.all || tag;
+  const plantTag = locale?.plantTags?.[tag]?.label;
+  if (plantTag) return plantTag;
   return locale?.tags?.[tag] || tag;
+}
+
+/** @param {string} tag @param {object} locale */
+export function plantTagInfo(tag, locale) {
+  const key = String(tag || '').toLowerCase();
+  const entry = locale?.plantTags?.[key];
+  return {
+    label: entry?.label || tagLabel(key, locale),
+    desc: entry?.desc || '',
+  };
 }
 
 export function priceLocale(lang = getLang()) {

@@ -151,6 +151,13 @@ function initNewsletterMock() {
         return;
       }
       form.reset();
+      const strip = form.closest('.newsletter-strip');
+      strip?.classList.add('is-success');
+      setTimeout(() => strip?.classList.remove('is-success'), 1200);
+
+      const { spawnLeafConfetti } = await import('./confetti.js');
+      spawnLeafConfetti(20);
+
       const msg = document.createElement('p');
       msg.setAttribute('role', 'status');
       msg.style.marginTop = '0.5rem';

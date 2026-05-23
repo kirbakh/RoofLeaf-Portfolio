@@ -16,8 +16,8 @@ import { mountContentLoader } from './loader-ui.js';
 import { t } from './i18n.js';
 import { bindCartButtons } from './cart.js';
 import { onPageReady } from './page-boot.js';
-import { localizePlant, priceLocale, ensureContentEn } from './content-i18n.js';
-import { initPlantPage } from './plant-page.js';
+import { localizePlant, priceLocale, ensureContentEn, plantTagInfo } from './content-i18n.js';
+import { initPlantPage, unlockCareSection } from './plant-page.js?v=3';
 
 let loadToken = 0;
 
@@ -120,6 +120,37 @@ async function loadPlant() {
 
     const careEyebrow = plantL.careEyebrow || 'Гайд по догляду';
     const relatedEyebrow = plantL.relatedEyebrow || 'Колекція';
+    const tagGuideTitle = plantL.tagGuideTitle || 'Що означають теги';
+    const careFactsTitle = plantL.careFactsTitle || 'Основи догляду';
+    const tagCards = (plant.tags || [])
+      .map((tag) => {
+        const info = plantTagInfo(tag, locale);
+        return `<article class="plant-tag-card">
+          <span class="plant-tag-card__label badge">${escapeHTML(info.label)}</span>
+          <p class="plant-tag-card__desc">${escapeHTML(info.desc)}</p>
+        </article>`;
+      })
+      .join('');
+
+    const careFacts = `
+      <div class="plant-care-facts" aria-label="${escapeHTML(careFactsTitle)}">
+        <article class="plant-care-fact">
+          <span class="plant-care-fact__label">${escapeHTML(plantL.watering || 'Полив')}</span>
+          <p class="plant-care-fact__value">${escapeHTML(plant.watering)}</p>
+        </article>
+        <article class="plant-care-fact">
+          <span class="plant-care-fact__label">${escapeHTML(plantL.humidity || 'Вологість')}</span>
+          <p class="plant-care-fact__value">${escapeHTML(plant.humidity)}</p>
+        </article>
+        <article class="plant-care-fact">
+          <span class="plant-care-fact__label">${escapeHTML(plantL.light || 'Світло')}</span>
+          <p class="plant-care-fact__value">${escapeHTML(lightLabel)}</p>
+        </article>
+        <article class="plant-care-fact">
+          <span class="plant-care-fact__label">${escapeHTML(plantL.care || 'Догляд')}</span>
+          <p class="plant-care-fact__value">${escapeHTML(careLabel)}</p>
+        </article>
+      </div>`;
 
     root.innerHTML = `
       ${breadcrumb}
@@ -180,15 +211,22 @@ async function loadPlant() {
             </div>
           </div>
         </div>
-        <section class="section plant-section plant-section--care">
-          <div class="section-header reveal">
+        <section class="section plant-section plant-section--care plant-section--care-ready">
+          <div class="section-header reveal is-visible">
             <div>
               <span class="section-eyebrow">${escapeHTML(careEyebrow)}</span>
-              <h2 class="section-title scroll-driven">${escapeHTML(locale.sections.care)}</h2>
+              <h2 class="section-title">${escapeHTML(locale.sections.care)}</h2>
             </div>
           </div>
-          <div class="plant-care-prose article-full__body">${paragraphs}</div>
-          <div class="plant-tags plant-card__meta">${plant.tags.map((tag) => `<span class="badge">${escapeHTML(tag)}</span>`).join(' ')}</div>
+          <div class="plant-care-layout" style="opacity:1;visibility:visible">
+            <h3 class="plant-care-layout__title">${escapeHTML(careFactsTitle)}</h3>
+            ${careFacts}
+            <div class="plant-care-prose article-full__body">${paragraphs}</div>
+            ${tagCards ? `<div class="plant-tag-guide">
+              <h3 class="plant-tag-guide__title">${escapeHTML(tagGuideTitle)}</h3>
+              <div class="plant-tag-guide__grid">${tagCards}</div>
+            </div>` : ''}
+          </div>
         </section>
         <section class="section plant-section plant-section--related">
           <div class="section-header reveal">
@@ -218,8 +256,10 @@ async function loadPlant() {
     }
     bindCartButtons(document.getElementById('plant-root'));
     const plantRoot = document.getElementById('plant-root');
-    window.reinitEffects?.(plantRoot);
     initPlantPage(plantRoot);
+    window.reinitEffects?.(plantRoot);
+    unlockCareSection(plantRoot);
+    requestAnimationFrame(() => unlockCareSection(plantRoot));
   } catch (e) {
     console.error('plant:', e);
     if (token !== loadToken) return;

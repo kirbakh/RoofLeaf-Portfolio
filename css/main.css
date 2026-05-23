@@ -101,7 +101,14 @@ html {
   .cursor-leaf, .cursor-glow, .floating-leaves { display: none !important; }
 }
 
-body.no-custom-cursor { cursor: auto; }
+body.no-custom-cursor,
+body:not(.has-custom-cursor) {
+  cursor: auto;
+}
+
+body.has-custom-cursor {
+  cursor: none;
+}
 
 body {
   margin: 0;
@@ -114,7 +121,21 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  cursor: none;
+}
+
+body.force-visible main,
+body.force-visible .site-header,
+body.force-visible .site-footer {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.force-visible .page-loader,
+body.force-visible .route-loader.is-active,
+body.force-visible .page-transition.is-active {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 body.is-loaded main,

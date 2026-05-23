@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/mobile-elements.css">
   <link rel="stylesheet" href="css/nav-drawer.css">
+  <link rel="stylesheet" href="css/enhancements.css">
   <script type="module" src="js/effects.js"></script>
 </head>
 <body data-page="home" class="theme-premium">
@@ -101,12 +102,12 @@
       </div>
     </section>
 
-    <div class="marquee" aria-hidden="true">
+    <div class="marquee marquee--enhanced" aria-hidden="true">
       <div class="marquee__track">
-        <span>Monstera · Pothos · Ficus · Calathea · ZZ Plant · Begonia ·</span>
-        <span>Monstera · Pothos · Ficus · Calathea · ZZ Plant · Begonia ·</span>
-        <span>Monstera · Pothos · Ficus · Calathea · ZZ Plant · Begonia ·</span>
-        <span>Monstera · Pothos · Ficus · Calathea · ZZ Plant · Begonia ·</span>
+        <span><span class="marquee__emoji">🌿</span> Monstera · <span class="marquee__emoji">✨</span> Pothos · <span class="marquee__emoji">🪴</span> Ficus · <span class="marquee__emoji">🍃</span> Calathea · <span class="marquee__emoji">💚</span> ZZ Plant · <span class="marquee__emoji">🌸</span> Begonia ·</span>
+        <span><span class="marquee__emoji">🌿</span> Monstera · <span class="marquee__emoji">✨</span> Pothos · <span class="marquee__emoji">🪴</span> Ficus · <span class="marquee__emoji">🍃</span> Calathea · <span class="marquee__emoji">💚</span> ZZ Plant · <span class="marquee__emoji">🌸</span> Begonia ·</span>
+        <span><span class="marquee__emoji">🌿</span> Monstera · <span class="marquee__emoji">✨</span> Pothos · <span class="marquee__emoji">🪴</span> Ficus · <span class="marquee__emoji">🍃</span> Calathea · <span class="marquee__emoji">💚</span> ZZ Plant · <span class="marquee__emoji">🌸</span> Begonia ·</span>
+        <span><span class="marquee__emoji">🌿</span> Monstera · <span class="marquee__emoji">✨</span> Pothos · <span class="marquee__emoji">🪴</span> Ficus · <span class="marquee__emoji">🍃</span> Calathea · <span class="marquee__emoji">💚</span> ZZ Plant · <span class="marquee__emoji">🌸</span> Begonia ·</span>
       </div>
     </div>
 
@@ -143,6 +144,146 @@
       </div>
     </section>
 
+    <section class="section light-quiz-section" aria-labelledby="quiz-title">
+      <div class="container">
+        <span class="section-eyebrow reveal" data-i18n="home.quizEyebrow">Plant matcher</span>
+        <h2 id="quiz-title" class="section-title reveal" data-i18n="home.quizTitle">Підбір за світлом</h2>
+        <p class="gallery-section__lead reveal" data-i18n="home.quizLead">Три кроки — і ми покажемо рослини, які підходять вашому кутку.</p>
+        <div id="light-quiz" class="light-quiz glass-card reveal" data-step="1" aria-busy="false">
+          <div class="light-quiz__head">
+            <div class="light-quiz__progress" aria-hidden="true"><span></span></div>
+            <p class="light-quiz__hint" data-i18n="home.quizHint">Оберіть варіант — результат одразу після третього кроку.</p>
+          </div>
+          <div class="light-quiz__steps-wrap">
+            <div class="light-quiz__step is-active" data-quiz-step="1">
+              <h3 data-i18n="home.quizStep1">Яке світло у кімнаті?</h3>
+              <div class="light-quiz__options light-quiz__options--grid">
+                <button type="button" class="light-quiz__option" data-quiz-value="low">
+                  <span class="light-quiz__option-icon" aria-hidden="true">🌙</span>
+                  <span><strong data-i18n="care.light.low">Мало світла</strong><span data-i18n="home.quizLightLow">Північне вікно, куток без сонця</span></span>
+                </button>
+                <button type="button" class="light-quiz__option" data-quiz-value="medium">
+                  <span class="light-quiz__option-icon" aria-hidden="true">☁️</span>
+                  <span><strong data-i18n="care.light.medium">Розсіяне</strong><span data-i18n="home.quizLightMed">Світло без прямих променів</span></span>
+                </button>
+                <button type="button" class="light-quiz__option" data-quiz-value="bright">
+                  <span class="light-quiz__option-icon" aria-hidden="true">☀️</span>
+                  <span><strong data-i18n="care.light.bright">Яскраве</strong><span data-i18n="home.quizLightBright">Біля вікна, схід/захід</span></span>
+                </button>
+              </div>
+            </div>
+            <div class="light-quiz__step" data-quiz-step="2">
+              <h3 data-i18n="home.quizStep2">Скільки часу на догляд?</h3>
+              <div class="light-quiz__options">
+                <button type="button" class="light-quiz__option" data-quiz-value="easy">
+                  <span class="light-quiz__option-icon" aria-hidden="true">🌱</span>
+                  <span><strong data-i18n="care.easy">Легкий догляд</strong><span data-i18n="home.quizCareEasy">Рідкий полив, без зайвих ритуалів</span></span>
+                </button>
+                <button type="button" class="light-quiz__option" data-quiz-value="medium">
+                  <span class="light-quiz__option-icon" aria-hidden="true">🌿</span>
+                  <span><strong data-i18n="care.medium">Середній догляд</strong><span data-i18n="home.quizCareMed">Готовий слідкувати за вологістю</span></span>
+                </button>
+              </div>
+            </div>
+            <div class="light-quiz__step" data-quiz-step="3">
+              <h3 data-i18n="home.quizStep3">Де поставите рослину?</h3>
+              <div class="light-quiz__options light-quiz__options--grid">
+                <button type="button" class="light-quiz__option" data-quiz-value="office">
+                  <span class="light-quiz__option-icon" aria-hidden="true">💼</span>
+                  <span><strong data-i18n="home.quizRoomOffice">Офіс / робочий стіл</strong><span data-i18n="home.quizRoomOfficeHint">Компактно, стійко до кондиціонера</span></span>
+                </button>
+                <button type="button" class="light-quiz__option" data-quiz-value="bedroom">
+                  <span class="light-quiz__option-icon" aria-hidden="true">🛏️</span>
+                  <span><strong data-i18n="home.quizRoomBed">Спальня</strong><span data-i18n="home.quizRoomBedHint">Спокійні відтінки, мінімум шуму</span></span>
+                </button>
+                <button type="button" class="light-quiz__option" data-quiz-value="living">
+                  <span class="light-quiz__option-icon" aria-hidden="true">🛋️</span>
+                  <span><strong data-i18n="home.quizRoomLive">Вітальня</strong><span data-i18n="home.quizRoomLiveHint">Акцентне листя, statement-рослина</span></span>
+                </button>
+              </div>
+            </div>
+            <div class="light-quiz__nav">
+              <button type="button" class="btn btn-secondary" data-quiz-back hidden data-i18n="cta.back">Назад</button>
+              <button type="button" class="btn btn-primary magnetic" data-quiz-next hidden data-i18n="home.quizNext">Далі</button>
+            </div>
+          </div>
+          <div class="light-quiz__result" aria-live="polite">
+            <h3 data-quiz-result-title data-i18n="home.quizResultTitle">Ваші збіги</h3>
+            <div class="light-quiz__result-plants plants-grid"></div>
+            <button type="button" class="btn btn-secondary" data-quiz-reset data-i18n="home.quizAgain">Пройти знову</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section delivery-flow" aria-labelledby="flow-title">
+      <div class="container">
+        <span class="section-eyebrow reveal" data-i18n="home.flowEyebrow">How it works</span>
+        <h2 id="flow-title" class="section-title reveal" data-i18n="home.flowTitle">Від кліку до зеленого кутка</h2>
+        <ol class="delivery-flow__track">
+          <li class="delivery-flow__step reveal">
+            <span class="delivery-flow__num">1</span>
+            <span class="delivery-flow__icon" aria-hidden="true">🛒</span>
+            <h3 data-i18n="home.flow1Title">Оберіть рослину</h3>
+            <p data-i18n="home.flow1Text">Фільтри за світлом і складністю — без здогадок.</p>
+          </li>
+          <li class="delivery-flow__step reveal">
+            <span class="delivery-flow__num">2</span>
+            <span class="delivery-flow__icon" aria-hidden="true">📦</span>
+            <h3 data-i18n="home.flow2Title">Упакуємо в теплицю</h3>
+            <p data-i18n="home.flow2Text">Фіксація листя, еко-наповнювач, QR-гайд у коробці.</p>
+          </li>
+          <li class="delivery-flow__step reveal">
+            <span class="delivery-flow__num">3</span>
+            <span class="delivery-flow__icon" aria-hidden="true">🚚</span>
+            <h3 data-i18n="home.flow3Title">Доставка 24–48 год</h3>
+            <p data-i18n="home.flow3Text">Київ кур'єром, інші міста — Нова Пошта.</p>
+          </li>
+          <li class="delivery-flow__step reveal">
+            <span class="delivery-flow__num">4</span>
+            <span class="delivery-flow__icon" aria-hidden="true">💬</span>
+            <h3 data-i18n="home.flow4Title">Підтримка 14 днів</h3>
+            <p data-i18n="home.flow4Text">Фото в чаті — підкажемо полив і місце.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section fun-facts" aria-labelledby="facts-title">
+      <div class="container">
+        <span class="section-eyebrow reveal" data-i18n="home.factsEyebrow">Did you know</span>
+        <h2 id="facts-title" class="section-title reveal" data-i18n="home.factsTitle">Зелені факти</h2>
+        <div class="fun-facts__bento stagger-grid">
+          <article class="fun-facts__card fun-facts__card--wide reveal" data-fact-index="0">
+            <div class="fun-facts__value" data-count="87" data-suffix="%">0</div>
+            <p class="fun-facts__label" data-i18n="home.fact1">клієнтів кажуть, що догляд став простіше з нашим гайдом</p>
+            <span class="fun-facts__emoji" aria-hidden="true">📖</span>
+          </article>
+          <article class="fun-facts__card reveal" data-fact-index="1">
+            <div class="fun-facts__value">NASA</div>
+            <p class="fun-facts__label" data-i18n="home.fact2">список рослин для очищення повітря в квартирі</p>
+            <span class="fun-facts__emoji" aria-hidden="true">🌬️</span>
+          </article>
+          <article class="fun-facts__card fun-facts__card--tall reveal" data-fact-index="2">
+            <div class="fun-facts__value" data-count="15" data-suffix=" хв">0</div>
+            <p class="fun-facts__label" data-i18n="home.fact3">середній час відповіді агронома в чаті</p>
+            <span class="fun-facts__emoji" aria-hidden="true">💬</span>
+          </article>
+          <article class="fun-facts__card reveal" data-fact-index="3">
+            <div class="fun-facts__value" data-count="100" data-suffix="%">0</div>
+            <p class="fun-facts__label" data-i18n="home.fact4">перероблюване пакування доставки</p>
+            <span class="fun-facts__emoji" aria-hidden="true">♻️</span>
+          </article>
+        </div>
+        <div class="fun-facts__dots" role="tablist" data-i18n-aria="home.factsTabs">
+          <button type="button" class="fun-facts__dot is-active" role="tab" aria-selected="true" aria-label="1"></button>
+          <button type="button" class="fun-facts__dot" role="tab" aria-selected="false" aria-label="2"></button>
+          <button type="button" class="fun-facts__dot" role="tab" aria-selected="false" aria-label="3"></button>
+          <button type="button" class="fun-facts__dot" role="tab" aria-selected="false" aria-label="4"></button>
+        </div>
+      </div>
+    </section>
+
     <section class="section" aria-labelledby="popular-title">
       <div class="container">
         <div class="section-header reveal">
@@ -173,7 +314,15 @@
       <div class="container">
         <span class="section-eyebrow reveal">Testimonials</span>
         <h2 id="reviews-title" class="section-title reveal" data-i18n="sections.reviews">Відгуки клієнтів</h2>
-        <div id="home-reviews" class="reviews-slider stagger-grid" aria-live="polite"></div>
+        <div class="reviews-rail reveal">
+          <div class="reviews-rail__viewport">
+            <div id="home-reviews" class="reviews-rail__track" aria-live="polite"></div>
+          </div>
+          <div class="reviews-rail__controls">
+            <button type="button" class="reviews-rail__btn" data-reviews-prev data-i18n-aria="home.reviewsPrev" aria-label="Попередній відгук"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <button type="button" class="reviews-rail__btn" data-reviews-next data-i18n-aria="home.reviewsNext" aria-label="Наступний відгук"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+          </div>
+        </div>
       </div>
     </section>
 

@@ -382,6 +382,41 @@ body.nav-open {
     gap: 1rem;
   }
 
+  .hero-floater {
+    font-size: 0.62rem;
+    padding: 0.3rem 0.55rem;
+  }
+
+  .hero-floater--1 { left: 2%; top: 8%; }
+  .hero-floater--2 { right: 2%; top: 38%; }
+  .hero-floater--3 { left: 6%; bottom: 12%; }
+
+  .light-quiz {
+    padding: 1.25rem;
+  }
+
+  .light-quiz__option {
+    padding: 0.85rem;
+  }
+
+  .delivery-flow__track {
+    gap: 0.75rem;
+  }
+
+  .fun-facts__bento {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fun-facts__card--wide,
+  .fun-facts__card--tall {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+
+  .reviews-rail__track .review-card {
+    flex-basis: min(300px, 88vw);
+  }
+
   .usp-grid {
     grid-template-columns: 1fr;
   }

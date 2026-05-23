@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test tests/",
+    "dev": "serve .",
     "build:content-en": "node scripts/build-content-en.mjs"
   }
 }

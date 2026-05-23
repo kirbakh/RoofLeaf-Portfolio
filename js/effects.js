@@ -15,8 +15,19 @@ import {
   INTRO_LOADER_MOBILE,
   ROUTE_LOADER_MIN_MS,
 } from './nav-timing.js';
-
 export { PAGE_TRANSITION_MS };
+
+/** Показати сторінку, якщо лоадер/JS зависли */
+export function ensurePageVisible() {
+  document.body.classList.add('is-loaded', 'force-visible');
+  document.body.classList.remove('is-leaving');
+  document.getElementById('page-loader')?.classList.add('is-done');
+  const route = document.getElementById('route-loader');
+  route?.classList.remove('is-active');
+  route?.removeAttribute('aria-busy');
+  document.getElementById('page-transition')?.classList.remove('is-active');
+  revealNow();
+}
 const prefersReduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isTouch = () => window.matchMedia('(hover: none)').matches;
 const isMobile = () => window.matchMedia('(max-width: 767px)').matches;
@@ -66,6 +77,7 @@ export function revealInViewport(container = document) {
   const root = container?.querySelectorAll ? container : document;
   const vh = window.innerHeight * 0.92;
   root.querySelectorAll('.reveal:not(.is-visible), .fade-in:not(.is-visible), .text-reveal:not(.is-visible)').forEach((el) => {
+    if (el.closest('.plant-section--care') && !el.closest('.section-header')) return;
     const rect = el.getBoundingClientRect();
     if (rect.top < vh && rect.bottom > 0) el.classList.add('is-visible');
   });
@@ -84,7 +96,7 @@ export function applyStaggerChildren(grid) {
 }
 
 function autoRevealMarkup() {
-  document.querySelectorAll('.section').forEach((section) => {
+  document.querySelectorAll('.section:not(.plant-section--care)').forEach((section) => {
     section.classList.add('section--scroll');
     const container = section.querySelector('.container');
     if (container && !section.querySelector('.section-divider')) {
@@ -95,8 +107,9 @@ function autoRevealMarkup() {
     }
   });
 
-  const cards = '.usp-card, .stat-card, .team-card, .journal-card, .review-card, .filters-panel, .cta-block, .newsletter-strip, .promo-banner, .contact-card, .faq-item, .plant-detail__info';
+  const cards = '.usp-card, .stat-card, .team-card, .journal-card, .review-card, .filters-panel, .cta-block, .newsletter-strip, .promo-banner, .contact-card, .faq-item, .plant-detail__info, .light-quiz, .fun-facts__card, .delivery-flow__step';
   document.querySelectorAll(cards).forEach((el, i) => {
+    if (el.closest('.plant-section--care')) return;
     el.classList.remove('is-visible');
     if (!el.classList.contains('reveal')) {
       el.classList.add('reveal');
@@ -143,7 +156,7 @@ function autoRevealMarkup() {
 
   const heavyFx = !prefersReduced() && !isMobile() && !isTouch();
   if (heavyFx) {
-    const tiltSel = '.usp-card, .stat-card, .team-card, .journal-card, .journal-featured__card, .review-card, .pot-card, .photo-mosaic__item, .cta-block, .newsletter-strip, .plant-hero__gallery, .plant-hero__panel';
+    const tiltSel = '.usp-card, .stat-card, .team-card, .journal-card, .journal-featured__card, .review-card, .pot-card, .photo-mosaic__item, .cta-block, .newsletter-strip, .light-quiz, .fun-facts__card, .plant-hero__gallery, .plant-hero__panel';
     document.querySelectorAll(tiltSel).forEach((el) => el.classList.add('tilt-card'));
     document.querySelectorAll('.glass-card').forEach((el) => el.classList.add('glass-shimmer'));
   }
@@ -249,7 +262,6 @@ function initRouteLoader() {
 
   if (!introDone) return;
 
-  document.body.classList.remove('is-loaded');
   route.classList.add('is-active');
   route.setAttribute('aria-busy', 'true');
 
@@ -262,7 +274,10 @@ function initRouteLoader() {
 
   const minMs = routeLoaderMinMs();
   const start = performance.now();
+  const safety = setTimeout(done, Math.max(minMs + 400, 2500));
+
   const finish = () => {
+    clearTimeout(safety);
     const left = Math.max(0, minMs - (performance.now() - start));
     setTimeout(done, left);
   };
@@ -351,6 +366,8 @@ function initCursor() {
   const glow = document.getElementById('cursor-glow');
   if (!leaf || !glow) return;
 
+  document.body.classList.add('has-custom-cursor');
+
   let mx = 0;
   let my = 0;
   let gx = 0;
@@ -414,6 +431,7 @@ function initReveal() {
   );
 
   document.querySelectorAll('.reveal:not(.is-visible), .fade-in:not(.is-visible), .text-reveal:not(.is-visible), .section-divider:not(.is-visible)').forEach((el, i) => {
+    if (el.closest('.plant-section--care') && !el.closest('.section-header')) return;
     if (!el.dataset.revealDelay) el.dataset.revealDelay = String((i % 6) * 65);
     revealObserver.observe(el);
   });
@@ -764,10 +782,27 @@ export function initEffects() {
   initMarqueePause();
   initPageTransition();
   initLinkPrefetch();
+
+  void import('./enhancements.js')
+    .then(({ initSiteEnhancements }) => initSiteEnhancements())
+    .catch((e) => console.error('enhancements:', e));
 }
 
 function boot() {
-  initEffects();
+  try {
+    initEffects();
+  } catch (e) {
+    console.error('effects init:', e);
+    ensurePageVisible();
+  }
+
+  const fallbackMs = 9000;
+  setTimeout(() => {
+    if (!document.body.classList.contains('is-loaded')) {
+      console.warn('effects: forcing page visible (loader timeout)');
+      ensurePageVisible();
+    }
+  }, fallbackMs);
 }
 
 if (document.body) boot();
@@ -794,7 +829,9 @@ window.reinitEffects = (container = document) => {
   const heavyFx = !prefersReduced() && !isMobile() && !isTouch();
   scope.querySelectorAll?.('.stagger-grid').forEach((grid) => applyStaggerChildren(grid));
   if (heavyFx) {
-    scope.querySelectorAll?.('.glass-card:not(.glass-shimmer)').forEach((el) => el.classList.add('glass-shimmer'));
+    scope
+      .querySelectorAll?.('.glass-card:not(.glass-shimmer):not(.plant-tag-card)')
+      .forEach((el) => el.classList.add('glass-shimmer'));
   }
   scope.querySelectorAll?.('.btn-primary:not(.btn-shine), .btn-secondary:not(.btn-shine)').forEach((el) => {
     el.classList.add('btn-shine', 'btn-ripple');

@@ -13,6 +13,14 @@ import { mountContentLoader } from './loader-ui.js';
 import { t, loadLocale } from './i18n.js';
 import { bindCartButtons } from './cart.js';
 import { onPageReady } from './page-boot.js';
+async function runHomeEnhancements() {
+  try {
+    const { initHomeEnhancements } = await import('./enhancements.js');
+    initHomeEnhancements();
+  } catch (e) {
+    console.error('home enhancements:', e);
+  }
+}
 import {
   localizePlant,
   localizeArticle,
@@ -131,6 +139,7 @@ async function loadHome() {
         })
         .join('');
       window.reinitEffects?.(reviewsEl);
+      runHomeEnhancements();
     }
   } catch (e) {
     console.error(e);
@@ -149,4 +158,5 @@ window.addEventListener('rl:localechange', () => {
 onPageReady(() => {
   loadGallery();
   loadHome();
+  runHomeEnhancements();
 });

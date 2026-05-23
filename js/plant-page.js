@@ -130,6 +130,37 @@ function pulseCartButton(root) {
   });
 }
 
+function initPlantSections(root) {
+  root.querySelectorAll('.plant-section').forEach((section) => {
+    section.classList.add('section--scroll', 'is-inview');
+  });
+}
+
+/** Контент «Догляд» не повинен залежати від scroll-reveal */
+export function unlockCareSection(root) {
+  const care = root.querySelector('.plant-section--care');
+  if (!care) return;
+
+  care.classList.add('is-inview', 'plant-section--care-ready');
+  const layout = care.querySelector('.plant-care-layout');
+  if (layout) {
+    layout.style.opacity = '1';
+    layout.style.visibility = 'visible';
+    layout.style.transform = 'none';
+    layout.style.filter = 'none';
+  }
+
+  care.querySelectorAll(
+    '.reveal, .fade-in, .plant-care-layout, .plant-care-layout__title, .plant-care-prose, .plant-care-prose p, .plant-tag-guide, .plant-tag-card, .plant-tag-card__desc, .plant-care-fact, .plant-care-fact__value'
+  ).forEach((el) => {
+    el.classList.add('is-visible');
+    el.classList.remove('reveal-left', 'reveal-right', 'reveal-scale', 'reveal-blur', 'reveal-fade', 'reveal-flip');
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    el.style.filter = 'none';
+  });
+}
+
 /**
  * @param {HTMLElement | null} [root]
  */
@@ -137,6 +168,8 @@ export function initPlantPage(root = document.getElementById('plant-root')) {
   if (!root?.querySelector('.plant-hero')) return;
 
   document.body.classList.add('is-plant-page');
+  initPlantSections(root);
+  unlockCareSection(root);
 
   if (reduced()) {
     root.querySelectorAll('.plant-reveal, .reveal').forEach((el) => el.classList.add('is-visible'));

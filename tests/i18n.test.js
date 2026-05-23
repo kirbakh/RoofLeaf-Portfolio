@@ -6,6 +6,7 @@ import {
   localizePlant,
   localizeArticle,
   tagLabel,
+  plantTagInfo,
   clearContentEnCache,
 } from '../js/content-i18n.js';
 
@@ -42,4 +43,13 @@ test('tagLabel maps Ukrainian article tags', () => {
   assert.equal(tagLabel('догляд', ua), 'Догляд');
   assert.equal(tagLabel('догляд', en), 'Care');
   assert.equal(tagLabel('all', en), 'All');
+});
+
+test('plantTagInfo returns label and description for plant tags', () => {
+  const info = plantTagInfo('тропічний', ua);
+  assert.equal(info.label, 'Тропічний');
+  assert.match(info.desc, /18–26/);
+  const enInfo = plantTagInfo('очищення повітря', en);
+  assert.equal(enInfo.label, 'Air purifying');
+  assert.ok(enInfo.desc.length > 10);
 });

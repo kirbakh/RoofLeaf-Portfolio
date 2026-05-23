@@ -1,0 +1,568 @@
+/* Root & Leaf — extra content blocks, micro-interactions */
+
+/* —— Hero floating chips —— */
+.hero-visual {
+  position: relative;
+}
+
+.hero-floaters {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.hero-floater {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(18, 25, 22, 0.72);
+  border: 1px solid rgba(143, 212, 176, 0.35);
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  animation: floaterBob 4.5s ease-in-out infinite;
+}
+
+.hero-floater--1 { top: 12%; left: -4%; animation-delay: 0s; }
+.hero-floater--2 { top: 42%; right: -6%; animation-delay: -1.2s; }
+.hero-floater--3 { bottom: 18%; left: 8%; animation-delay: -2.4s; }
+
+@keyframes floaterBob {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+/* —— Marquee v2 —— */
+.marquee--enhanced .marquee__track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.marquee__emoji {
+  font-size: 1.1em;
+  filter: drop-shadow(0 0 8px rgba(143, 212, 176, 0.35));
+}
+
+/* —— Light quiz —— */
+.light-quiz-section {
+  position: relative;
+}
+
+.light-quiz {
+  display: grid;
+  gap: 1.75rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 100% 0%, rgba(143, 212, 176, 0.12), transparent 55%),
+    linear-gradient(165deg, rgba(34, 43, 38, 0.95), rgba(18, 25, 22, 0.98));
+}
+
+.light-quiz__head {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 52ch;
+}
+
+.light-quiz__progress {
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background: rgba(143, 212, 176, 0.12);
+  overflow: hidden;
+}
+
+.light-quiz__progress span {
+  display: block;
+  height: 100%;
+  width: 33%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent-deep), var(--accent), var(--accent-2));
+  box-shadow: 0 0 16px rgba(143, 212, 176, 0.45);
+  transition: width 0.55s var(--ease-out);
+}
+
+.light-quiz[data-step="2"] .light-quiz__progress span { width: 66%; }
+.light-quiz[data-step="3"] .light-quiz__progress span { width: 100%; }
+.light-quiz.is-result .light-quiz__progress span { width: 100%; background: var(--warm); }
+
+.light-quiz__step {
+  display: none;
+  animation: quizStepIn 0.55s var(--ease-out);
+}
+
+.light-quiz__step.is-active {
+  display: grid;
+  gap: 1rem;
+}
+
+@keyframes quizStepIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+.light-quiz__step h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 3vw, 1.45rem);
+}
+
+.light-quiz__options {
+  display: grid;
+  gap: 0.65rem;
+}
+
+@media (min-width: 600px) {
+  .light-quiz__options--grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.light-quiz__option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem 1.1rem;
+  text-align: left;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  cursor: pointer;
+  transition:
+    transform 0.35s var(--ease-out),
+    border-color 0.35s,
+    box-shadow 0.35s,
+    background 0.35s;
+}
+
+.light-quiz__option:hover {
+  transform: translateY(-3px);
+  border-color: rgba(143, 212, 176, 0.45);
+  box-shadow: var(--shadow-glow);
+}
+
+.light-quiz__option.is-selected {
+  border-color: var(--accent);
+  background: rgba(143, 212, 176, 0.1);
+  box-shadow: 0 0 24px rgba(143, 212, 176, 0.15);
+}
+
+.light-quiz__option-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.light-quiz__option strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.light-quiz__option span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.light-quiz__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.light-quiz__result {
+  display: none;
+  gap: 1.25rem;
+}
+
+.light-quiz.is-result .light-quiz__steps-wrap {
+  display: none;
+}
+
+.light-quiz.is-result .light-quiz__result {
+  display: grid;
+  animation: quizStepIn 0.6s var(--ease-out);
+}
+
+.light-quiz__result-plants {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .light-quiz__result-plants {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.light-quiz__result-plants .pot-card {
+  height: 100%;
+}
+
+/* —— Delivery flow —— */
+.delivery-flow__track {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  position: relative;
+}
+
+@media (min-width: 900px) {
+  .delivery-flow__track {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  .delivery-flow__track::before {
+    content: "";
+    position: absolute;
+    top: 2.1rem;
+    left: 8%;
+    right: 8%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.35;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.2s var(--ease-out);
+  }
+
+  .delivery-flow.is-animated .delivery-flow__track::before {
+    transform: scaleX(1);
+  }
+}
+
+.delivery-flow__step {
+  position: relative;
+  padding: 1.35rem 1.25rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.03);
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.65s var(--ease-out),
+    transform 0.65s var(--ease-out),
+    border-color 0.4s,
+    box-shadow 0.4s;
+}
+
+.delivery-flow__step.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delivery-flow__step:hover {
+  border-color: rgba(143, 212, 176, 0.4);
+  box-shadow: var(--shadow-glow);
+}
+
+.delivery-flow__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 0.85rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--bg-deep);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(143, 212, 176, 0.35);
+}
+
+.delivery-flow__step h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.delivery-flow__step p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.delivery-flow__icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.35rem;
+  opacity: 0.55;
+}
+
+/* —— Fun facts bento —— */
+.fun-facts__bento {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .fun-facts__bento {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, minmax(120px, auto));
+  }
+
+  .fun-facts__card--wide {
+    grid-column: span 2;
+  }
+
+  .fun-facts__card--tall {
+    grid-row: span 2;
+  }
+}
+
+.fun-facts__card {
+  position: relative;
+  padding: 1.25rem 1.35rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+  transition: transform 0.45s var(--ease-out), box-shadow 0.45s;
+}
+
+.fun-facts__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 0%), rgba(143, 212, 176, 0.14), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+}
+
+.fun-facts__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.fun-facts__card:hover::before {
+  opacity: 1;
+}
+
+.fun-facts__card.is-active {
+  border-color: rgba(143, 212, 176, 0.45);
+  box-shadow: var(--shadow-glow);
+}
+
+.fun-facts__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.fun-facts__label {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.fun-facts__emoji {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.75rem;
+  font-size: 2rem;
+  opacity: 0.2;
+}
+
+.fun-facts__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 1.25rem;
+}
+
+.fun-facts__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(143, 212, 176, 0.25);
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.fun-facts__dot.is-active {
+  background: var(--accent);
+  transform: scale(1.25);
+}
+
+/* —— Reviews rail —— */
+.reviews-rail {
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+.reviews-rail__viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0.25rem 0 1rem;
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+
+.reviews-rail__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.reviews-rail__track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  padding: 0 0.25rem;
+}
+
+.reviews-rail__track .review-card {
+  flex: 0 0 min(320px, 85vw);
+  scroll-snap-align: start;
+  min-height: 100%;
+}
+
+@media (min-width: 1100px) {
+  .reviews-rail__track .review-card {
+    flex-basis: min(300px, 28vw);
+  }
+}
+
+.reviews-rail__controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+}
+
+.reviews-rail__btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  background: rgba(26, 34, 30, 0.9);
+  color: var(--accent);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s var(--ease-out), border-color 0.35s, box-shadow 0.35s;
+}
+
+.reviews-rail__btn:hover:not(:disabled) {
+  transform: scale(1.08);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.reviews-rail__btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* —— Leaf confetti —— */
+.leaf-confetti-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.leaf-confetti {
+  position: absolute;
+  top: -12px;
+  width: 14px;
+  height: 18px;
+  background: var(--accent);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  opacity: 0.85;
+  animation: leafFall var(--dur, 2.8s) ease-in forwards;
+}
+
+@keyframes leafFall {
+  to {
+    transform: translate(var(--tx, 0), 110vh) rotate(var(--rot, 360deg));
+    opacity: 0;
+  }
+}
+
+/* —— Newsletter success pulse —— */
+.newsletter-strip.is-success {
+  animation: newsletterPulse 0.65s var(--ease-out);
+  border-color: rgba(143, 212, 176, 0.55) !important;
+}
+
+@keyframes newsletterPulse {
+  0% { box-shadow: 0 0 0 rgba(143, 212, 176, 0); }
+  50% { box-shadow: 0 0 40px rgba(143, 212, 176, 0.25); }
+  100% { box-shadow: var(--shadow-card); }
+}
+
+/* —— Konami toast —— */
+.konami-toast {
+  position: fixed;
+  bottom: 5.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  z-index: 8000;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  background: rgba(26, 34, 30, 0.95);
+  border: 1px solid rgba(143, 212, 176, 0.4);
+  box-shadow: var(--shadow-glow);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, transform 0.4s var(--ease-out), visibility 0.4s;
+}
+
+.konami-toast.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-floater,
+  .light-quiz__step,
+  .leaf-confetti {
+    animation: none !important;
+  }
+
+  .delivery-flow__step {
+    opacity: 1;
+    transform: none;
+  }
+
+  .delivery-flow__track::before {
+    transform: scaleX(1);
+  }
+
+  .reviews-rail__viewport {
+    scroll-behavior: auto;
+  }
+}
