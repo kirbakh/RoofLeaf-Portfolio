@@ -12,11 +12,9 @@ const navTimingJs = readFileSync(join(root, 'js', 'nav-timing.js'), 'utf8');
 const mainJs = readFileSync(join(root, 'js', 'main.js'), 'utf8');
 const utilsJs = readFileSync(join(root, 'js', 'utils.js'), 'utf8');
 
-test('responsive.css covers mobile layout and nav drawer', () => {
+test('responsive.css covers mobile layout', () => {
   assert.match(responsiveCss, /@media \(max-width: 767px\)/);
   assert.match(responsiveCss, /env\(safe-area-inset/);
-  assert.match(responsiveCss, /\.nav-mobile__panel/);
-  assert.match(responsiveCss, /\.menu-toggle\.is-open/);
   assert.match(responsiveCss, /\.plant-preview__dialog/);
   assert.match(responsiveCss, /font-size:\s*max\(16px/);
   assert.doesNotMatch(responsiveCss, /content-visibility:\s*auto/);
@@ -34,14 +32,22 @@ test('effects.js keeps loaders and transitions on mobile with shorter timing', (
 test('nav-timing exports mobile loader constants', () => {
   assert.match(navTimingJs, /INTRO_LOADER_MOBILE/);
   assert.match(navTimingJs, /MOBILE_PAGE_TRANSITION_MS/);
+  assert.match(navTimingJs, /complete: 4600/);
+  assert.match(navTimingJs, /complete: 1850/);
 });
 
-test('header toggles menu-open classes and builds nav backdrop', () => {
-  assert.match(mainJs, /nav-is-open/);
-  assert.match(mainJs, /nav-mobile__backdrop/);
-  assert.match(mainJs, /ensureMobileNavStructure/);
-  assert.match(mainJs, /addMobileNavTools/);
-  assert.match(mainJs, /stopPropagation/);
+test('header uses simple right drawer nav', () => {
+  assert.match(mainJs, /setupMobileNav/);
+  assert.match(mainJs, /document\.body\.appendChild\(nav\)/);
+  assert.doesNotMatch(mainJs, /setAttribute\('aria-hidden'/);
+  assert.doesNotMatch(mainJs, /stopPropagation/);
+});
+
+test('nav-drawer.css slides panel from the right', () => {
+  const navDrawerCss = readFileSync(join(root, 'css', 'nav-drawer.css'), 'utf8');
+  assert.match(navDrawerCss, /translate3d\(100%/);
+  assert.match(navDrawerCss, /\.nav-mobile__panel/);
+  assert.doesNotMatch(navDrawerCss, /backdrop-filter/);
 });
 
 test('mobile-elements.css adapts major UI blocks', () => {
@@ -49,7 +55,6 @@ test('mobile-elements.css adapts major UI blocks', () => {
   assert.match(mobileCss, /\.cart-drawer__foot/);
   assert.match(mobileCss, /\.plant-hero__actions/);
   assert.match(mobileCss, /\.filter-chips/);
-  assert.match(mobileCss, /\.nav-mobile__tools/);
   assert.match(mobileCss, /\.contact-card-item/);
 });
 

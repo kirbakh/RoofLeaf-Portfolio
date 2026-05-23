@@ -8,30 +8,36 @@ import { loadContentEn, clearContentEnCache } from './content-i18n.js';
 import { initTheme } from './theme.js';
 
 const COOKIE_KEY = 'rl-cookies-accepted';
-
-/** Backdrop + panel — кліки по псевдо-елементу на iOS не працюють */
-function ensureMobileNavStructure(nav) {
+/** Панель справа: backdrop + links (без важких ефектів) */
+function setupMobileNav(nav) {
   if (!nav || nav.dataset.navReady) return;
 
-  const links = [...nav.querySelectorAll(':scope > a')];
-  if (!links.length) return;
+  let backdrop = nav.querySelector('.nav-mobile__backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('button');
+    backdrop.type = 'button';
+    backdrop.className = 'nav-mobile__backdrop';
+    backdrop.setAttribute('aria-label', 'Закрити меню');
+    nav.insertBefore(backdrop, nav.firstChild);
+  }
 
-  const backdrop = document.createElement('button');
-  backdrop.type = 'button';
-  backdrop.className = 'nav-mobile__backdrop';
-  backdrop.setAttribute('aria-label', 'Закрити меню');
-  backdrop.tabIndex = -1;
+  let panel = nav.querySelector('.nav-mobile__panel');
+  if (!panel) {
+    panel = document.createElement('div');
+    panel.className = 'nav-mobile__panel';
+    nav.appendChild(panel);
+  }
 
-  const panel = document.createElement('div');
-  panel.className = 'nav-mobile__panel';
-  links.forEach((link) => panel.appendChild(link));
+  nav.querySelectorAll(':scope > a').forEach((link) => panel.appendChild(link));
 
-  nav.append(backdrop, panel);
+  if (nav.parentElement !== document.body) {
+    document.body.appendChild(nav);
+  }
+
   nav.dataset.navReady = '1';
   addMobileNavTools(panel);
 }
 
-/** Тема в меню, коли кнопка прихована в header (≤520px) */
 function addMobileNavTools(panel) {
   if (!panel || panel.querySelector('.nav-mobile__tools')) return;
 
@@ -46,67 +52,52 @@ function addMobileNavTools(panel) {
   themeBtn.className = 'nav-mobile__tool nav-mobile__tool--theme';
   themeBtn.setAttribute('data-i18n', 'nav.theme');
   themeBtn.innerHTML = '<span aria-hidden="true">◐</span><span>Тема</span>';
-
   themeBtn.addEventListener('click', () => {
     themeSrc.click();
-    closeNavRef?.();
+    window.__rlCloseNav?.();
   });
 
   tools.appendChild(themeBtn);
   panel.appendChild(tools);
 }
 
-let closeNavRef;
-
 function initHeader() {
   const header = document.querySelector('.site-header');
   const toggle = document.querySelector('.menu-toggle');
   const mobileNav = document.querySelector('.nav-mobile');
 
-  const main = document.getElementById('main');
+  setupMobileNav(mobileNav);
 
-  ensureMobileNavStructure(mobileNav);
   const backdrop = mobileNav?.querySelector('.nav-mobile__backdrop');
+  const panel = mobileNav?.querySelector('.nav-mobile__panel');
 
   const closeNav = () => {
-    mobileNav?.classList.remove('is-open');
+    if (!mobileNav) return;
+    mobileNav.classList.remove('is-open');
     document.body.classList.remove('nav-open');
-    header?.classList.remove('nav-is-open');
     toggle?.classList.remove('is-open');
     toggle?.setAttribute('aria-expanded', 'false');
-    main?.removeAttribute('aria-hidden');
-    backdrop?.setAttribute('tabindex', '-1');
   };
 
-  closeNavRef = closeNav;
+  window.__rlCloseNav = closeNav;
 
-  const setNavOpen = (open) => {
-    mobileNav?.classList.toggle('is-open', open);
-    document.body.classList.toggle('nav-open', open);
-    header?.classList.toggle('nav-is-open', open);
-    toggle?.classList.toggle('is-open', open);
-    toggle?.setAttribute('aria-expanded', String(open));
-    if (open) {
-      main?.setAttribute('aria-hidden', 'true');
-      backdrop?.setAttribute('tabindex', '0');
-    } else {
-      main?.removeAttribute('aria-hidden');
-      backdrop?.setAttribute('tabindex', '-1');
-    }
+  const openNav = () => {
+    if (!mobileNav) return;
+    mobileNav.classList.add('is-open');
+    document.body.classList.add('nav-open');
+    toggle?.classList.add('is-open');
+    toggle?.setAttribute('aria-expanded', 'true');
   };
 
-  if (toggle && mobileNav) {
-    const onToggle = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      setNavOpen(!mobileNav.classList.contains('is-open'));
-    };
-
-    toggle.addEventListener('click', onToggle);
+  if (toggle && mobileNav && panel) {
+    toggle.addEventListener('click', () => {
+      if (mobileNav.classList.contains('is-open')) closeNav();
+      else openNav();
+    });
 
     backdrop?.addEventListener('click', closeNav);
 
-    mobileNav.querySelectorAll('.nav-mobile__panel a').forEach((link) => {
+    panel.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', closeNav);
     });
 
@@ -126,7 +117,7 @@ function initHeader() {
 function setActiveNav() {
   const page = document.body.dataset.page;
   if (!page) return;
-  document.querySelectorAll('.nav-desktop a, .nav-mobile a').forEach((link) => {
+  document.querySelectorAll('.nav-desktop a, .nav-mobile__panel a').forEach((link) => {
     const href = link.getAttribute('href') || '';
     const isActive =
       (page === 'home' && (href === 'index.html' || href === '/' || href === '')) ||
@@ -149,8 +140,6 @@ function initCookieBanner() {
     banner.classList.remove('is-visible');
   });
 }
-
-/* scroll reveal handled by effects.js */
 
 function initNewsletterMock() {
   document.querySelectorAll('.newsletter-form').forEach((form) => {

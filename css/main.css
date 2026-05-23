@@ -840,77 +840,14 @@ body.is-loaded .hero .text-reveal.is-visible .text-reveal-inner {
 
 .menu-toggle { display: flex; }
 
+/* Мобільне меню — див. css/nav-drawer.css */
 .nav-mobile {
-  display: flex;
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  background: transparent;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.38s var(--ease-out), visibility 0.38s, background 0.38s;
-}
-
-.nav-mobile__backdrop {
-  position: absolute;
-  inset: 0;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  background: rgba(8, 12, 10, 0.78);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.38s var(--ease-out);
-}
-
-.nav-mobile__panel {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.nav-mobile.is-open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.nav-mobile.is-open .nav-mobile__backdrop {
-  opacity: 1;
-}
-
-.nav-mobile a {
-  position: relative;
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--text);
-  text-decoration: none;
+  display: none;
 }
 
 @media (min-width: 900px) {
   .nav-desktop { display: flex; }
   .menu-toggle { display: none; }
-  .nav-mobile {
-    display: none !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-  }
 }
 
 @media (min-width: 900px) and (max-width: 1080px) {
