@@ -26,6 +26,17 @@ test('enhancements.js exports site/home init', () => {
   assert.match(enhancementsJs, /prefers-reduced-motion/);
 });
 
+test('light-quiz.js binds via document capture and self-inits', () => {
+  const lightQuizJs = readFileSync(join(root, 'js', 'light-quiz.js'), 'utf8');
+  assert.match(lightQuizJs, /addEventListener\('click', handleQuizInteraction, true\)/);
+  assert.match(lightQuizJs, /export function initLightQuiz/);
+  assert.match(lightQuizJs, /rl:ready/);
+  assert.match(lightQuizJs, /from '\.\/cart\.js'/);
+  assert.match(lightQuizJs, /bindCartButtons/);
+  assert.doesNotMatch(lightQuizJs, /bindCartButtons[^;]*from '\.\/utils\.js'/);
+  assert.match(indexHtml, /js\/light-quiz\.js/);
+});
+
 test('confetti.js is lightweight', () => {
   const confettiJs = readFileSync(join(root, 'js', 'confetti.js'), 'utf8');
   assert.match(confettiJs, /export function spawnLeafConfetti/);
@@ -35,7 +46,7 @@ test('confetti.js is lightweight', () => {
 test('effects.js wires site enhancements lazily with fallback', () => {
   assert.match(effectsJs, /import\('\.\/enhancements\.js'\)/);
   assert.match(effectsJs, /ensurePageVisible/);
-  assert.match(effectsJs, /\.light-quiz/);
+  assert.match(effectsJs, /light-quiz/);
 });
 
 test('enhancements.css respects reduced motion', () => {

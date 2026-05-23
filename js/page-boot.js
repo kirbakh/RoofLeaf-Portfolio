@@ -2,7 +2,7 @@
  * Гарантований запуск після DOM + i18n (один раз)
  */
 export function onPageReady(fn) {
-  const run = () => fn().catch((e) => console.error(e));
+  const run = () => Promise.resolve(fn()).catch((e) => console.error(e));
 
   const schedule = () => {
     if (window.__rlLocaleReady) {

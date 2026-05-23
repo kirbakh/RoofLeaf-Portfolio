@@ -107,7 +107,7 @@ function autoRevealMarkup() {
     }
   });
 
-  const cards = '.usp-card, .stat-card, .team-card, .journal-card, .review-card, .filters-panel, .cta-block, .newsletter-strip, .promo-banner, .contact-card, .faq-item, .plant-detail__info, .light-quiz, .fun-facts__card, .delivery-flow__step';
+  const cards = '.usp-card, .stat-card, .team-card, .journal-card, .review-card, .filters-panel, .cta-block, .newsletter-strip, .promo-banner, .contact-card, .faq-item, .plant-detail__info, .fun-facts__card, .delivery-flow__step';
   document.querySelectorAll(cards).forEach((el, i) => {
     if (el.closest('.plant-section--care')) return;
     el.classList.remove('is-visible');
@@ -122,6 +122,8 @@ function autoRevealMarkup() {
   });
 
   document.querySelectorAll('.stagger-grid').forEach((grid) => applyStaggerChildren(grid));
+
+  document.getElementById('light-quiz')?.classList.add('is-visible', 'is-interactive');
 
   document.querySelectorAll('.section-eyebrow:not(.reveal)').forEach((el) => el.classList.add('reveal', 'reveal-fade'));
   document.querySelectorAll('.section-title:not(.reveal):not(.text-reveal)').forEach((el) => {
@@ -156,7 +158,7 @@ function autoRevealMarkup() {
 
   const heavyFx = !prefersReduced() && !isMobile() && !isTouch();
   if (heavyFx) {
-    const tiltSel = '.usp-card, .stat-card, .team-card, .journal-card, .journal-featured__card, .review-card, .pot-card, .photo-mosaic__item, .cta-block, .newsletter-strip, .light-quiz, .fun-facts__card, .plant-hero__gallery, .plant-hero__panel';
+    const tiltSel = '.usp-card, .stat-card, .team-card, .journal-card, .journal-featured__card, .review-card, .pot-card, .photo-mosaic__item, .cta-block, .newsletter-strip, .fun-facts__card, .plant-hero__gallery, .plant-hero__panel';
     document.querySelectorAll(tiltSel).forEach((el) => el.classList.add('tilt-card'));
     document.querySelectorAll('.glass-card').forEach((el) => el.classList.add('glass-shimmer'));
   }
@@ -783,7 +785,7 @@ export function initEffects() {
   initPageTransition();
   initLinkPrefetch();
 
-  void import('./enhancements.js')
+  import('./enhancements.js')
     .then(({ initSiteEnhancements }) => initSiteEnhancements())
     .catch((e) => console.error('enhancements:', e));
 }
